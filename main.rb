@@ -1,5 +1,5 @@
-Dir["../clases/persona/*.rb"].each { |clasePer| require_relative clasePer }
-Dir["../clases/media/*.rb"].each { |claseMe| require_relative claseMe }
+Dir["clases/persona/*.rb"].each { |clasePer| require_relative clasePer }
+Dir["clases/media/*.rb"].each { |claseMe| require_relative claseMe }
 
 # TEST
 x = Alumno.new()
