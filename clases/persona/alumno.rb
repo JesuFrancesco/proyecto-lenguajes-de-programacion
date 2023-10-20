@@ -1,6 +1,8 @@
 require_relative "usuario.rb"
 
 class Alumno < Usuario
+  @@maxLibro = 5
+  @@maxTiempo = 7
   attr_accessor :codAlumno
   
   def initialize(codAlumno, apellidoPaterno, apellidoMaterno, nombre)
@@ -8,8 +10,6 @@ class Alumno < Usuario
     @apellidoPaterno = apellidoPaterno
     @apellidoMaterno = apellidoMaterno
     @nombre = nombre
-    @maxLibro = 5
-    @maxTiempo = 7
   end
 
 end
