@@ -12,7 +12,7 @@ puts "**********               **************"
 puts "***************************************"
 
 # TEST
-x = Alumno.new()
+x = Alumno.new(1, "a", "b", "c")
 y = Profesor.new()
 # z = Usuario.new() <= Agarra excepcion
 
@@ -33,8 +33,8 @@ while true do
         when 1
             puts w.titulo
         when 2
-            puts x.maxLibro
-            puts y.maxLibro
+            puts "- Alumno #{x.apellidoPaterno} #{x.apellidoMaterno} #{x.nombre} de codigo #{x.codAlumno}"
+            # puts y.maxLibro
         else
             puts "no hacer nada"
         end
