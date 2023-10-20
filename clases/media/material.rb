@@ -1,6 +1,6 @@
 class Material
   attr_accessor :titulo, :area, :autor
-  def initialize()
+  def initialize
     raise Exception, "#{self.class} es clase abstracta."
   end
 

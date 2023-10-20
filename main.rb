@@ -13,7 +13,7 @@ puts "***************************************"
 
 # TEST
 x = Alumno.new(1, "a", "b", "c")
-y = Profesor.new()
+y = Profesor.new(2, "a", "b", "c")
 # z = Usuario.new() <= Agarra excepcion
 
 w = Libro.new()
@@ -40,5 +40,4 @@ while true do
         end
     end
 end
-
 
