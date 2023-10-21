@@ -7,9 +7,7 @@ class Profesor < Usuario
 
   def initialize(codProfesor, apellidoPaterno, apellidoMaterno, nombre)
     @codProfesor = codProfesor
-    @apellidoPaterno = apellidoPaterno
-    @apellidoMaterno = apellidoMaterno
-    @nombre = nombre
-
+    super(apellidoPaterno, apellidoMaterno, nombre)
   end
+
 end

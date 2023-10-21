@@ -4,12 +4,10 @@ class Alumno < Usuario
   @@maxLibro = 5
   @@maxTiempo = 7
   attr_accessor :codAlumno
-  
+
   def initialize(codAlumno, apellidoPaterno, apellidoMaterno, nombre)
     @codAlumno = codAlumno
-    @apellidoPaterno = apellidoPaterno
-    @apellidoMaterno = apellidoMaterno
-    @nombre = nombre
+    super(apellidoPaterno, apellidoMaterno, nombre)
   end
 
 end
