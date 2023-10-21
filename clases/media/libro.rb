@@ -6,4 +6,13 @@ class Libro < Material
     @paginas = paginas
   end
 
+  def exp_json()
+    {
+      titulo: @titulo,
+      area: @area,
+      autor: @autor,
+      paginas: @paginas
+    }
+  end
+
 end

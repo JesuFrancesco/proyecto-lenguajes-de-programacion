@@ -10,4 +10,13 @@ class Profesor < Usuario
     super(apellidoPaterno, apellidoMaterno, nombre)
   end
 
+  def exp_json()
+    {
+      codProfesor: @codProfesor,
+      apellidoPaterno: @apellidoPaterno,
+      apellidoMaterno: @apellidoMaterno,
+      nombre: @nombre
+    }
+  end
+
 end

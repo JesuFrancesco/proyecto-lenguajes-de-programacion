@@ -13,8 +13,25 @@ def printObj(objeto)
     end
 end
 
+def guardarJSON_Array(objeto, ruta)
+    array = []
+    for objeto in objeto
+      array << objeto.exp_json()
+    end
+    x = JSON.generate(array)
+    File.open("#{ruta}", "w") { | archivo | archivo.write(x) }
+end
 
-require 'multi_json'
+def leerJSON_Array(objeto, ruta)
+    array = []
+    cadena_json = File.read(ruta)
+    data = JSON.parse(cadena_json)
+    # TODO
+    return array
+end
+
+# Librerías
+require 'json'
 
 # Modelo USUARIO
 puts "***************************************"
@@ -23,35 +40,34 @@ puts "*********  biblioteca ul  *************"
 puts "**********               **************"
 puts "***************************************"
 
-# TEST LIBROS
+# TEST TDA
 libros = [
-    Libro.new("el","pepe","123", 60),
-    Libro.new("potaxio","wwwww","234", 70),
-    Libro.new("wowoaowoawo","ttt","345", 80),
-    Libro.new("el","pepe","123", 30)
+    Libro.new("Luna de Pluton","Terror","Ángel David Revilla Lenoci", 60),
+    Libro.new("Sueños de acero y neón","Ciberpunk","Jordi Wild", 70),
+    Libro.new("El libro troll","Troll","Rubius", 2),
 ]
-# w = Libro.new()
-# w1 = Material.new("d", "e", "f") # <= Agarra excepcion
-# libros << w
 
-# TEST ALUMNOS
 alumnos = [
-    Alumno.new(1, "a", "b", "c"),
-    Alumno.new(2, "d", "e", "f"),
-    Alumno.new(3, "g", "h", "i")
+    Alumno.new(1, "A", "B", "Juana"),
+    Alumno.new(2, "C", "D", "Maria"),
+    Alumno.new(3, "E", "F", "Roberto")
 ]
-al_json = MultiJson.dump(alumnos)
 
 profesores = [
-    Profesor.new(10, "a", "b", "c")
+    Profesor.new(10, "A", "B", "Luis")
 ]
+
+# TEST CLASE ABSTRACTA
+# w1 = Material.new("d", "e", "f") # <= Agarra excepcion
 # z = Usuario.new(0, "d", "d") # <= Agarra excepcion
 
 # Flujo terminal
 while true do
+    # Opciones
     puts "1. Ver libros"
     puts "2. Ver usuarios"
     puts "3. Salir"
+    print "-> "
     opcion = gets.to_i
     # Salir
     if opcion == 3 then
@@ -60,16 +76,12 @@ while true do
         # Opcion 1 y 2
         case opcion
         when 1
-            for i in libros do
-                puts printObj(i)
-            end
+            guardarJSON_Array(libros, "data_material/libros.json")
+            # Otros TDA's (TODO)
+
         when 2
-            for i in alumnos do
-                puts printObj(i)
-            end
-            for j in profesores do
-                puts printObj(j)
-            end
+            guardarJSON_Array(alumnos, "data_usuario/alumnos.json")
+            guardarJSON_Array(profesores, "data_usuario/profesores.json")
         else
             puts "Opción inválida."
         end
