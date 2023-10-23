@@ -39,8 +39,8 @@ def printProfesor(profesor)
     "- Profesor #{profesor.apellidoPaterno} #{profesor.apellidoMaterno}, #{profesor.nombre} de codigo #{profesor.codProfesor}"
 end
 
-ventana = TkRoot.new  {title "Proyecto Integrador | Biblioteca"}
-
+ventana = TkRoot.new {title "Proyecto Integrador | Biblioteca"}
+ventana.geometry = '800x800'
 #code to add a label widget
 TkLabel.new(ventana){
    text 'Registro'
@@ -67,23 +67,39 @@ TkLabel.new(ventana){
     grid('row'=>3, 'column'=>0)
 }
 
+$aP = TkVariable.new
 lab_ApPaterno = TkEntry.new(ventana){
     font 'Arial 12'
+    textvariable $aP
     grid('row'=>1, 'column'=>1)
 }
 
+$aM = TkVariable.new
 lab_ApMAterno = TkEntry.new(ventana){
     font 'Arial 12'
+    textvariable $aM
     grid('row'=>2, 'column'=>1)
 }
 
+$n = TkVariable.new
 lab_Nombre = TkEntry.new(ventana){
     font 'Arial 12'
+    textvariable $n
     grid('row'=>3, 'column'=>1)
 }
 
-# TODO
-# botonR
+def registrar()
+    alumno = Alumno.new(222, $aP.get, $aM.get, $n.get)
+    puts alumno
+    # puts "heyy"
+end
+
+botonR = TkButton.new(ventana){
+    font 'Times 14 bold'
+    text 'Registrar'
+    command (proc {registrar})
+    grid('row'=>4,'column' =>0, 'columnspan'=>2)
+}
 
 Tk.mainloop
 
