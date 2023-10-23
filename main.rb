@@ -40,25 +40,50 @@ def printProfesor(profesor)
 end
 
 ventana = TkRoot.new  {title "Proyecto Integrador | Biblioteca"}
-TkLabel.new(ventana) do
-    text 'Inicio sesion'
-    font 'Times 16 bold'    
-    pack { padx 15 ; pady 15; side 'left' }
-end
-TkLabel.new(ventana) do
+
+#code to add a label widget
+TkLabel.new(ventana){
+   text 'Registro'
+   font 'Times 20 bold'
+   background "orange"
+   grid('row'=>0, 'column'=>0, 'columnspan'=>2)
+}
+
+TkLabel.new(ventana){
     text 'Apellido Paterno'
-    font 'Times 16 bold'    
-    pack { padx 15 ; pady 15; side 'left' }
-end
-TkLabel.new(ventana) do
+    font 'Times 16 bold'
+    grid('row'=>1, 'column'=>0)
+}
+
+TkLabel.new(ventana){
     text 'Apellido Materno'
-    font 'Times 16 bold'    
-    pack { padx 15 ; pady 15; side 'left' }
-end
-TkLabel.new(ventana) do
+    font 'Times 16 bold'
+    grid('row'=>2, 'column'=>0)
+}
+
+TkLabel.new(ventana){
     text 'Nombre'
-    font 'Times 16 bold'    
-    pack { padx 15 ; pady 15; side 'left' }
-end
+    font 'Times 16 bold'
+    grid('row'=>3, 'column'=>0)
+}
+
+lab_ApPaterno = TkEntry.new(ventana){
+    font 'Arial 12'
+    grid('row'=>1, 'column'=>1)
+}
+
+lab_ApMAterno = TkEntry.new(ventana){
+    font 'Arial 12'
+    grid('row'=>2, 'column'=>1)
+}
+
+lab_Nombre = TkEntry.new(ventana){
+    font 'Arial 12'
+    grid('row'=>3, 'column'=>1)
+}
+
+# TODO
+# botonR
+
 Tk.mainloop
 
