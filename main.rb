@@ -3,13 +3,8 @@ if __FILE__ != $0 then exit end
 Dir["clases/persona/*.rb"].each { |clasePer| require_relative clasePer }
 Dir["clases/media/*.rb"].each { |claseMe| require_relative claseMe }
 
-# Modelo USUARIO
-
-puts "***************************************"
-puts "**********               **************"
-puts "*********  biblioteca ul  *************"
-puts "**********               **************"
-puts "***************************************"
+# Require
+require 'tk'
 
 # TEST LIBROS
 libros = []
@@ -44,32 +39,26 @@ def printProfesor(profesor)
     "- Profesor #{profesor.apellidoPaterno} #{profesor.apellidoMaterno}, #{profesor.nombre} de codigo #{profesor.codProfesor}"
 end
 
-# Flujo terminal
-while true do
-    puts "1. Ver libros"
-    puts "2. Ver usuarios"
-    puts "3. Salir"
-    opcion = gets.to_i
-    # Salir
-    if opcion == 3 then 
-        break
-    else
-        # Opcion 1 y 2
-        case opcion
-        when 1
-            for i in libros do
-                puts printLibro(i)
-            end
-        when 2
-            for i in alumnos do
-                puts printAlumno(i)
-            end
-            for j in profesores do
-                puts printProfesor(j)
-            end
-        else
-            puts "Opción inválida."
-        end
-    end
+ventana = TkRoot.new  {title "Proyecto Integrador | Biblioteca"}
+TkLabel.new(ventana) do
+    text 'Inicio sesion'
+    font 'Times 16 bold'    
+    pack { padx 15 ; pady 15; side 'left' }
 end
+TkLabel.new(ventana) do
+    text 'Apellido Paterno'
+    font 'Times 16 bold'    
+    pack { padx 15 ; pady 15; side 'left' }
+end
+TkLabel.new(ventana) do
+    text 'Apellido Materno'
+    font 'Times 16 bold'    
+    pack { padx 15 ; pady 15; side 'left' }
+end
+TkLabel.new(ventana) do
+    text 'Nombre'
+    font 'Times 16 bold'    
+    pack { padx 15 ; pady 15; side 'left' }
+end
+Tk.mainloop
 
