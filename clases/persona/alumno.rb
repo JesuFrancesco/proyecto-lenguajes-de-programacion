@@ -19,4 +19,8 @@ class Alumno < Usuario
     }
   end
 
+  def self.leer_json(diccionario)
+    return Alumno.new(diccionario["codAlumno"], diccionario["apellidoPaterno"], diccionario["apellidoMaterno"], diccionario["nombre"])
+  end
+
 end

@@ -19,4 +19,8 @@ class Profesor < Usuario
     }
   end
 
+  def self.leer_json(diccionario)
+    return Profesor.new(diccionario["codProfesor"], diccionario["apellidoPaterno"], diccionario["apellidoMaterno"], diccionario["nombre"])
+  end
+
 end

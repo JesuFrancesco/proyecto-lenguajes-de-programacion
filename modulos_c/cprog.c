@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 char *func(){
-    return "test";
+    return "Test";
 }
 
 int main(int argc, char const *argv[])

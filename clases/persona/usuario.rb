@@ -10,4 +10,5 @@ class Usuario
     @apellidoMaterno = apellidoMaterno
     @nombre = nombre
   end
+
 end
