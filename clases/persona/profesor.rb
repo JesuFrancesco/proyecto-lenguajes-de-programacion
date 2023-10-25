@@ -15,12 +15,24 @@ class Profesor < Usuario
       codProfesor: @codProfesor,
       apellidoPaterno: @apellidoPaterno,
       apellidoMaterno: @apellidoMaterno,
-      nombre: @nombre
+      nombre: @nombre,
+      # Adeuda
+      adeudaLib: @adeudaLib,
+      librosAdeudados: @librosAdeudados,
+      # Reserva
+      tieneLibSeparado: @tieneLibSeparado,
+      libReservados: @libReservados
     }
   end
 
   def self.leer_json(diccionario)
-    return Profesor.new(diccionario["codProfesor"], diccionario["apellidoPaterno"], diccionario["apellidoMaterno"], diccionario["nombre"])
+    p =  Profesor.new(diccionario["codProfesor"], diccionario["apellidoPaterno"], diccionario["apellidoMaterno"], diccionario["nombre"])
+    # ver si se puede usar herencia de metodo
+    p.adeudaLib = diccionario["adeudaLib"]
+    p.librosAdeudados = diccionario["librosAdeudados"]
+    p.tieneLibSeparado = diccionario["tieneLibSeparado"]
+    p.libReservados = diccionario["libReservados"]
+    return p
   end
 
 end

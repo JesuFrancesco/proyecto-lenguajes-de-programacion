@@ -4,7 +4,7 @@ Dir["clases/persona/*.rb"].each { |clasePer| require_relative clasePer }
 Dir["clases/media/*.rb"].each { |claseMe| require_relative claseMe }
 
 def printObj(objeto)
-    if objeto.is_a?(Material) then
+    if objeto.is_a?(Libro) then
     "- Libro #{objeto.titulo} del autor #{objeto.autor} perteneciente al area #{objeto.area}"
     elsif objeto.is_a?(Alumno)
     "- Alumno #{objeto.apellidoPaterno} #{objeto.apellidoMaterno}, #{objeto.nombre} de codigo #{objeto.codAlumno}"
@@ -81,7 +81,10 @@ while true do
         when 1
             guardarJSON_Array(libros, "data_material/libros.json")
             # Otros TDA's (TODO)
-
+            l = leerJSON_Array(Libro, "data_material/libros.json")
+            for i in l do
+                puts printObj(l)
+            end
         when 2
             # Prueba para guardar el array a json
             guardarJSON_Array(alumnos, "data_usuario/alumnos.json")

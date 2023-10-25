@@ -1,5 +1,5 @@
 class Usuario
-  attr_accessor :apellidoPaterno, :apellidoMaterno, :nombre, :adeudaLib, :librosAdeudados, :cntLibAdeudados, :tieneLibSeparado, :libReservados, :ctnLibReservados
+  attr_accessor :apellidoPaterno, :apellidoMaterno, :nombre, :adeudaLib, :librosAdeudados, :tieneLibSeparado, :libReservados
   attr_reader :maxLibro, :maxTiempo
 
   def initialize(apellidoPaterno, apellidoMaterno, nombre)
@@ -9,6 +9,11 @@ class Usuario
     @apellidoPaterno = apellidoPaterno
     @apellidoMaterno = apellidoMaterno
     @nombre = nombre
+    # Datos de biblioteca
+    @adeudaLib = false
+    @librosAdeudados = []
+    @tieneLibSeparado = false
+    @libReservados = []
   end
 
 end
