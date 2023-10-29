@@ -83,7 +83,7 @@ while true do
             # Otros TDA's (TODO)
             l = leerJSON_Array(Libro, "data_material/libros.json")
             for i in l do
-                puts printObj(l)
+                puts printObj(i)
             end
         when 2
             # Prueba para guardar el array a json

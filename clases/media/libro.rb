@@ -15,4 +15,10 @@ class Libro < Material
     }
   end
 
+  def self.leer_json(diccionario)
+    l = Libro.new(diccionario["titulo"], diccionario["area"], diccionario["autor"], diccionario["paginas"])
+
+    return l
+  end
+
 end
