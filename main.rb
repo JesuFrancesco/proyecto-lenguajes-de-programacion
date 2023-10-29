@@ -75,17 +75,44 @@ while true do
     # Salir
     if opcion == 3 then
         break
+
     else
         # Opcion 1 y 2
         case opcion
         when 1
-            guardarJSON_Array(libros, "data_material/libros.json")
+            # guardarJSON_Array(libros, "data_material/libros.json")
             # Otros TDA's (TODO)
 
             # Lectura de json a array de libros
             l = leerJSON_Array(Libro, "data_material/libros.json")
             for i in l do
                 puts printObj(i)
+            end
+            puts 'Defina acción a realizar:'
+            puts "1. Ordenamiento"
+            puts "2. Búsqueda"
+            puts "3. Filtro"
+            print "-> "
+            opAccion = gets.to_i
+
+            # Acciones de C y HS
+            case opAccion
+            when 1
+                puts "Ingrese método de ordenamiento"
+                puts "1. Año de publicacion"
+                puts "2. Numero de paginas"
+                opOrd = gets
+                cmd = `modulos_c\\cprog.exe #{}`
+                print(cmd)
+            when 2
+                puts "Ingrese autor a buscar"
+                autor = gets.chomp # para quitar el /n del final
+                cmd = `modulos_c\\cprog.exe "#{autor}"`
+                puts(cmd)
+            when 3
+                #TODO
+            else
+                puts 'pos no se'
             end
         when 2
             # Prueba para guardar el array a json
