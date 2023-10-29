@@ -13,14 +13,14 @@ def printObj(objeto)
     end
 end
 
-# def guardarJSON_Array(objeto, ruta)
-#     array = []
-#     for objeto in objeto
-#       array << objeto.exp_json()
-#     end
-#     x = JSON.generate(array)
-#     File.open("#{ruta}", "w") { | archivo | archivo.write(x) }
-# end
+def guardarJSON_Array(objeto, ruta)
+    array = []
+    for objeto in objeto
+      array << objeto.exp_json()
+    end
+    x = JSON.generate(array)
+    File.open("#{ruta}", "w") { | archivo | archivo.write(x) }
+end
 
 def leerJSON_Array(clase, ruta)
     array = []
@@ -45,9 +45,9 @@ puts "***************************************"
 
 # TEST TDA
 libros = [
-    Libro.new("Luna de Pluton","Terror","Ángel David Revilla Lenoci", 60),
-    Libro.new("Sueños de acero y neón","Ciberpunk","Jordi Wild", 70),
-    Libro.new("El libro troll","Troll","Rubius", 2),
+    Libro.new("Luna de Pluton","Terror","Ángel David Revilla Lenoci", 60, 2016),
+    Libro.new("Sueños de acero y neón","Ciberpunk","Jordi Wild", 70, 2018),
+    Libro.new("El libro troll","Troll","Rubius", 2, 2013),
 ]
 
 alumnos = [
@@ -79,7 +79,7 @@ while true do
         # Opcion 1 y 2
         case opcion
         when 1
-            # guardarJSON_Array(libros, "data_material/libros.json")
+            guardarJSON_Array(libros, "data_material/libros.json")
             # Otros TDA's (TODO)
 
             # Lectura de json a array de libros
