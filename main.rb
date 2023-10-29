@@ -13,14 +13,14 @@ def printObj(objeto)
     end
 end
 
-def guardarJSON_Array(objeto, ruta)
-    array = []
-    for objeto in objeto
-      array << objeto.exp_json()
-    end
-    x = JSON.generate(array)
-    File.open("#{ruta}", "w") { | archivo | archivo.write(x) }
-end
+# def guardarJSON_Array(objeto, ruta)
+#     array = []
+#     for objeto in objeto
+#       array << objeto.exp_json()
+#     end
+#     x = JSON.generate(array)
+#     File.open("#{ruta}", "w") { | archivo | archivo.write(x) }
+# end
 
 def leerJSON_Array(clase, ruta)
     array = []
@@ -79,22 +79,25 @@ while true do
         # Opcion 1 y 2
         case opcion
         when 1
-            guardarJSON_Array(libros, "data_material/libros.json")
+            # guardarJSON_Array(libros, "data_material/libros.json")
             # Otros TDA's (TODO)
+
+            # Lectura de json a array de libros
             l = leerJSON_Array(Libro, "data_material/libros.json")
             for i in l do
                 puts printObj(i)
             end
         when 2
             # Prueba para guardar el array a json
-            guardarJSON_Array(alumnos, "data_usuario/alumnos.json")
-            guardarJSON_Array(profesores, "data_usuario/profesores.json")
-            # Lectura de json a array de objetos
+            # guardarJSON_Array(alumnos, "data_usuario/alumnos.json")
+            # guardarJSON_Array(profesores, "data_usuario/profesores.json")
+
+            # Lectura de json a array de alumnos
             a = leerJSON_Array(Alumno, "data_usuario/alumnos.json")
             for i in a do
                 puts printObj(i)
             end
-            # Lectura de json a array de objetos
+            # Lectura de json a array de profesores
             p = leerJSON_Array(Profesor, "data_usuario/profesores.json")
             for i in p do
                 puts printObj(i)
