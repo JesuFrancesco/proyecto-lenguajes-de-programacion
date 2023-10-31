@@ -13,14 +13,14 @@ def printObj(objeto)
     end
 end
 
-def guardarJSON_Array(objeto, ruta)
-    array = []
-    for objeto in objeto
-      array << objeto.exp_json()
-    end
-    x = JSON.generate(array)
-    File.open("#{ruta}", "w") { | archivo | archivo.write(x) }
-end
+# def guardarJSON_Array(objeto, ruta)
+#     array = []
+#     for objeto in objeto
+#       array << objeto.exp_json()
+#     end
+#     x = JSON.generate(array)
+#     File.open("#{ruta}", "w") { | archivo | archivo.write(x) }
+# end
 
 def leerJSON_Array(clase, ruta)
     array = []
@@ -35,20 +35,6 @@ end
 
 # Librerías
 require 'json'
-
-# Modelo USUARIO
-puts "***************************************"
-puts "**********               **************"
-puts "*********  biblioteca ul  *************"
-puts "**********               **************"
-puts "***************************************"
-
-# TEST TDA
-libros = [
-    Libro.new("Luna de Pluton","Terror","Ángel David Revilla Lenoci", 60, 2016),
-    Libro.new("Sueños de acero y neón","Ciberpunk","Jordi Wild", 70, 2018),
-    Libro.new("El libro troll","Troll","Rubius", 2, 2013),
-]
 
 alumnos = [
     Alumno.new(1, "A", "B", "Juana"),
@@ -66,18 +52,30 @@ profesores = [
 
 # Flujo terminal
 while true do
+    system "cls"
+    # Modelo USUARIO
+    system "color A0"
+    puts "***************************************"
+    puts "**********               **************"
+    puts "*********  biblioteca ul  *************"
+    puts "**********               **************"
+    puts "***************************************"
+    system "color 0A"
+
     # Opciones
     puts "1. Ver libros"
     puts "2. Ver usuarios"
     puts "3. Salir"
     print "-> "
     opcion = gets.to_i
+    system "cls"
     # Salir
     if opcion == 3 then
+        puts "Hasta pronto"
         break
 
+    # Opciones 1 y 2 (Libros y Usuarios)
     else
-        # Opcion 1 y 2
         case opcion
         when 1
             # guardarJSON_Array(libros, "data_material/libros.json")
@@ -88,32 +86,64 @@ while true do
             for i in l do
                 puts printObj(i)
             end
-            puts 'Defina acción a realizar:'
+            system "pause"
+
+            # Preguntar por acción a realizar
+            puts "\n* Defina acción a realizar:"
             puts "1. Ordenamiento"
             puts "2. Búsqueda"
             puts "3. Filtro"
             print "-> "
             opAccion = gets.to_i
+            while opAccion < 1 || opAccion > 3 do
+                puts "Opción inválida"
+                print "-> "
+                opAccion = gets.to_i
+            end
+            system "cls"
 
-            # Acciones de C y HS
+            # Ordenamiento C
             case opAccion
             when 1
                 puts "Ingrese método de ordenamiento"
                 puts "1. Año de publicacion"
                 puts "2. Numero de paginas"
-                opOrd = gets
-                cmd = `modulos_c\\cprog.exe #{}`
-                print(cmd)
+                print "-> "
+                opOrd = gets.to_i
+                while opOrd < 1 || opOrd > 2 do
+                    puts "Opción inválida"
+                    print "-> "
+                    opOrd = gets.to_i
+                end
+                system "cls"
+                # Ordenamiento en base a atributo
+                case opOrd
+                when 1
+                    #TODO
+                when 2
+                    #TODO
+                else
+                    puts "Opción inválida."
+                end
+                
+
+            # Búsqueda C
             when 2
                 puts "Ingrese autor a buscar"
                 autor = gets.chomp # para quitar el /n del final
                 cmd = `modulos_c\\cprog.exe "#{autor}"`
-                puts(cmd)
+                system "cls"
+                puts(cmd) # Realiza la función en el programa compilado de C mediante un cmd interno (?)
+                system "pause"
+
+            # Filtros con Haskell
             when 3
-                #TODO
+                #TODO FILTRO
             else
                 puts 'pos no se'
             end
+
+        
         when 2
             # Prueba para guardar el array a json
             # guardarJSON_Array(alumnos, "data_usuario/alumnos.json")
@@ -124,13 +154,18 @@ while true do
             for i in a do
                 puts printObj(i)
             end
+            system "pause"
+
             # Lectura de json a array de profesores
             p = leerJSON_Array(Profesor, "data_usuario/profesores.json")
             for i in p do
                 puts printObj(i)
             end
+            system "pause"
+
         else
             puts "Opción inválida."
+            system "pause"
         end
     end
 end
