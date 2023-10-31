@@ -46,6 +46,12 @@ profesores = [
     Profesor.new(10, "A", "B", "Luis")
 ]
 
+module ACCION
+    ORDENAMIENTO = 1
+    BUSQUEDA = 2
+    FILTRO = 3
+end
+
 # TEST CLASE ABSTRACTA
 # w1 = Material.new("d", "e", "f") # <= Agarra excepcion
 # z = Usuario.new(0, "d", "d") # <= Agarra excepcion
@@ -93,28 +99,32 @@ while true do
             puts "1. Ordenamiento"
             puts "2. Búsqueda"
             puts "3. Filtro"
+            puts "4. Salir"
             print "-> "
             opAccion = gets.to_i
-            while opAccion < 1 || opAccion > 3 do
+            while opAccion < 1 || opAccion > 4 do
                 puts "Opción inválida"
                 print "-> "
                 opAccion = gets.to_i
             end
+            if opAccion == 4 then next end # Para salir
             system "cls"
 
             # Ordenamiento C
             case opAccion
-            when 1
+            when ACCION::ORDENAMIENTO
                 puts "Ingrese método de ordenamiento"
                 puts "1. Año de publicacion"
                 puts "2. Numero de paginas"
+                puts "3. Salir"
                 print "-> "
                 opOrd = gets.to_i
-                while opOrd < 1 || opOrd > 2 do
+                while opOrd < 1 || opOrd > 3 do
                     puts "Opción inválida"
                     print "-> "
                     opOrd = gets.to_i
                 end
+                if opAccion == 3 then next end # Para salir
                 system "cls"
                 # Ordenamiento en base a atributo
                 case opOrd
@@ -125,10 +135,9 @@ while true do
                 else
                     puts "Opción inválida."
                 end
-                
 
             # Búsqueda C
-            when 2
+            when ACCION::BUSQUEDA
                 puts "Ingrese autor a buscar"
                 autor = gets.chomp # para quitar el /n del final
                 cmd = `modulos_c\\cprog.exe "#{autor}"`
@@ -137,7 +146,7 @@ while true do
                 system "pause"
 
             # Filtros con Haskell
-            when 3
+            when ACCION::FILTRO
                 #TODO FILTRO
             else
                 puts 'pos no se'
@@ -149,17 +158,32 @@ while true do
             # guardarJSON_Array(alumnos, "data_usuario/alumnos.json")
             # guardarJSON_Array(profesores, "data_usuario/profesores.json")
 
-            # Lectura de json a array de alumnos
-            a = leerJSON_Array(Alumno, "data_usuario/alumnos.json")
-            for i in a do
-                puts printObj(i)
+            puts "Elija tipo de usuarios"
+            puts "1. Alumnos"
+            puts "2. Profesores"
+            puts "3. Salir"
+            print "-> "
+            opUsu = gets.to_i
+            while opUsu < 1 || opUsu > 3 do
+                puts "Opción inválida"
+                print "-> "
+                opUsu = gets.to_i
             end
-            system "pause"
+            if opUsu == 3 then next end
 
-            # Lectura de json a array de profesores
-            p = leerJSON_Array(Profesor, "data_usuario/profesores.json")
-            for i in p do
-                puts printObj(i)
+            if (opUsu == 1) then
+                # Lectura de json a array de alumnos
+                a = leerJSON_Array(Alumno, "data_usuario/alumnos.json")
+                for i in a do
+                    puts printObj(i)
+                end
+
+            elsif (opUsu == 2)
+                # Lectura de json a array de profesores
+                p = leerJSON_Array(Profesor, "data_usuario/profesores.json")
+                for i in p do
+                    puts printObj(i)
+                end
             end
             system "pause"
 
