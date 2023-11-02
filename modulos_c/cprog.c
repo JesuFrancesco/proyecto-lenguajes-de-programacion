@@ -138,7 +138,7 @@ int main(int argc, char const *argv[])
     int tipo = atoi(argv[1]); // Numero 1 para buscar por autor, numero 2 para buscar por titulo
     char *cadena = argv[2];
 
-    char *nombreArchivo = "data_material\\libros.json";
+    char *nombreArchivo = "data_material\\material.json";
 
     buscarLibro(nombreArchivo, tipo, cadena);
 

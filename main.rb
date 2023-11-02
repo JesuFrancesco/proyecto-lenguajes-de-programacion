@@ -22,13 +22,28 @@ if __FILE__ != $0 then exit end
     #     File.open("#{ruta}", "w") { | archivo | archivo.write(x) }
     # end
 
-    def leerJSON_Array(clase, ruta)
+    def leerJSON_Array(ruta, clases)
         array = []
         cadena_json = File.read(ruta)
         data = JSON.parse(cadena_json)
         # Lectura de json a objeto de ruby & almacenamiento en array
         for i in data do
-            array << clase.leer_json(i)
+            clase = i["clase"]
+            if !clases.include? clase then next end
+            case clase
+            when CLASE::ALUMNO
+                array << Alumno.leer_json(i)
+            when CLASE::PROFESOR
+                array << Profesor.leer_json(i)
+            when CLASE::LIBRO
+                array << Libro.leer_json(i)
+            when CLASE::JOURNAL
+                array << Journal.leer_json(i)
+            when CLASE::ACTA_CONGRESO
+                array << ActaCongreso.leer_json(i)
+            else
+                puts "wtf tu no existes"
+            end
         end
         return array
     end
@@ -52,11 +67,19 @@ if __FILE__ != $0 then exit end
         FILTRO = 3
     end
 
+    module CLASE
+      ALUMNO = 'Alumno'
+      PROFESOR = 'Profesor'
+      LIBRO = 'Libro'
+      JOURNAL = 'Journal'
+      ACTA_CONGRESO = 'ActaCongreso'
+    end
+
     # Flujo terminal
     while true do
         system "cls"
         # Modelo USUARIO
-        system "color a"
+        system "color 0a"
         puts "***************************************"
         puts "**********               **************"
         puts "*********  biblioteca ul  *************"
@@ -80,8 +103,8 @@ if __FILE__ != $0 then exit end
         else
             case opcion
             when 1
-                # Lectura de json a array de libros
-                l = leerJSON_Array(Libro, "data_material/libros.json")
+                # Lectura de json a array de materiales
+                l = leerJSON_Array("data_material/material.json", [CLASE::LIBRO, CLASE::JOURNAL, CLASE::ACTA_CONGRESO])
                 for i in l do
                     puts printObj(i)
                 end
@@ -95,7 +118,7 @@ if __FILE__ != $0 then exit end
                 print "-> "
                 opAccion = getOp(1,3)
                 if opAccion == 3 then next end # Para salir
-                system "cls"
+                # system "cls"
 
                 case opAccion
                 # Búsqueda C
@@ -161,24 +184,29 @@ if __FILE__ != $0 then exit end
                 puts "Elija tipo de usuarios"
                 puts "1. Alumnos"
                 puts "2. Profesores"
-                puts "3. Salir"
+                puts "3. Ambos"
+                puts "4. Salir"
                 print "-> "
-                opUsu = getOp(1,3)
-                if opUsu == 3 then next end
+                opUsu = getOp(1,4)
+                if opUsu == 4 then next end
 
-                if (opUsu == 1) then
+                clases = []
+                case opUsu
+                when 1
                     # Lectura de json a array de alumnos
-                    a = leerJSON_Array(Alumno, "data_usuario/alumnos.json")
-                    for i in a do
-                        puts printObj(i)
-                    end
-
-                elsif (opUsu == 2)
+                    clases = [CLASE::ALUMNO]
+                when 2
                     # Lectura de json a array de profesores
-                    p = leerJSON_Array(Profesor, "data_usuario/profesores.json")
-                    for i in p do
-                        puts printObj(i)
-                    end
+                    clases = [CLASE::PROFESOR]
+                when 3
+                    # Lectura de json a array de usuarios
+                    clases = [CLASE::ALUMNO, CLASE::PROFESOR]
+                end
+
+                # Lectura de json a array de alumnos
+                array = leerJSON_Array("data_usuario/usuarios.json", clases)
+                for i in array do
+                    puts printObj(i)
                 end
                 system "pause"
 
