@@ -4,12 +4,19 @@ if __FILE__ != $0 then exit end
     Dir["clases/media/*.rb"].each { |claseMe| require_relative claseMe }
 
     def printObj(objeto)
-        if objeto.is_a?(Libro) then
-        "- Libro #{objeto.titulo} del autor #{objeto.autor} perteneciente al area #{objeto.area}" + "\n\t-> Stock #{objeto.stock}"
-        elsif objeto.is_a?(Alumno)
-        "- Alumno #{objeto.apellidoPaterno} #{objeto.apellidoMaterno}, #{objeto.nombre} de codigo #{objeto.codAlumno}"
-        elsif objeto.is_a?(Profesor)
-        "- Profesor #{objeto.apellidoPaterno} #{objeto.apellidoMaterno}, #{objeto.nombre} de codigo #{objeto.codProfesor}"
+        if objeto.is_a?(Material) then
+            tipo = objeto.class
+            tipo == ActaCongreso ? tipo="Acta de Congreso": tipo=objeto.class
+            return "- #{tipo} #{objeto.titulo} del autor #{objeto.autor} perteneciente al area #{objeto.area}" + "\n\t-> Stock #{objeto.stock}"
+
+        else
+            tipo = objeto.class
+            if(tipo == Alumno)
+                return "- #{tipo} #{objeto.apellidoPaterno} #{objeto.apellidoMaterno}, #{objeto.nombre} de codigo #{objeto.codAlumno}"
+            else
+                return "- #{tipo} #{objeto.apellidoPaterno} #{objeto.apellidoMaterno}, #{objeto.nombre} de codigo #{objeto.codProfesor}"
+            end
+
         end
     end
 
@@ -212,8 +219,8 @@ if __FILE__ != $0 then exit end
 
                 # Lectura de json a array de alumnos
                 array = leerJSON_Array("data_usuario/usuarios.json", clases)
-                for i in array do
-                    puts printObj(i)
+                for material in array do
+                    puts printObj(material)
                 end
                 system "pause"
 

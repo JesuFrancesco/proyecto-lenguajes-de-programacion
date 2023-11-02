@@ -6,19 +6,19 @@ class Libro < Material
     @paginas = paginas
   end
 
-  def exp_json()
-    {
-      titulo: @titulo,
-      area: @area,
-      autor: @autor,
-      paginas: @paginas,
-      yearPublicacion: @yearPublicacion,
-      stock: @stock
-    }
-  end
+  # def exp_json()
+  #   {
+  #     titulo: @titulo,
+  #     area: @area,
+  #     autor: @autor,
+  #     paginas: @paginas,
+  #     yearPublicacion: @yearPublicacion,
+  #     stock: @stock
+  #   }
+  # end
 
-  def self.leer_json(diccionario)
-    l = Libro.new(diccionario["titulo"], diccionario["area"], diccionario["autor"], diccionario["paginas"], diccionario["yearPublicacion"], diccionario["stock"])
+  def self.leer_json(dicc)
+    l = Libro.new(dicc["titulo"], dicc["area"], dicc["autor"], dicc["paginas"], dicc["yearPublicacion"], dicc["stock"])
     return l
   end
 

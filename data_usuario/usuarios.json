@@ -1,42 +1,602 @@
 [
-    {"codAlumno": 20192451, "apellidoPaterno": "González", "apellidoMaterno": "López", "nombre": "Juana", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Alumno"},
-    {"codAlumno": 20213956, "apellidoPaterno": "Rodríguez", "apellidoMaterno": "Fernández", "nombre": "Pedro", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Alumno"},
-    {"codAlumno": 20223957, "apellidoPaterno": "Martínez", "apellidoMaterno": "García", "nombre": "Luisa", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Alumno"},
-    {"codAlumno": 20192458, "apellidoPaterno": "Fernández", "apellidoMaterno": "Pérez", "nombre": "Carlos", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Alumno"},
-    {"codAlumno": 20213959, "apellidoPaterno": "López", "apellidoMaterno": "Sánchez", "nombre": "Ana", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Alumno"},
-    {"codAlumno": 20223960, "apellidoPaterno": "García", "apellidoMaterno": "Ramírez", "nombre": "Mario", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Alumno"},
-    {"codAlumno": 20192461, "apellidoPaterno": "Pérez", "apellidoMaterno": "Martínez", "nombre": "Isabel", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Alumno"},
-    {"codAlumno": 20213962, "apellidoPaterno": "Sánchez", "apellidoMaterno": "Fernández", "nombre": "Ricardo", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Alumno"},
-    {"codAlumno": 20223963, "apellidoPaterno": "Ramírez", "apellidoMaterno": "López", "nombre": "Laura", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Alumno"},
-    {"codAlumno": 20192464, "apellidoPaterno": "Martínez", "apellidoMaterno": "Gómez", "nombre": "Diego", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Alumno"},
-    {"codAlumno": 20204678, "apellidoPaterno": "Hernández", "apellidoMaterno": "Silva", "nombre": "Javier", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Alumno"},
-    {"codAlumno": 20193215, "apellidoPaterno": "Gómez", "apellidoMaterno": "Mendoza", "nombre": "Verónica", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Alumno"},
-    {"codAlumno": 20212345, "apellidoPaterno": "Vargas", "apellidoMaterno": "Lara", "nombre": "Luis", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Alumno"},
-    {"codAlumno": 20185237, "apellidoPaterno": "Soto", "apellidoMaterno": "Cabrera", "nombre": "Mariana", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Alumno"},
-    {"codAlumno": 20204567, "apellidoPaterno": "Ortega", "apellidoMaterno": "Pérez", "nombre": "Andrés", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Alumno"},
-    {"codAlumno": 20198876, "apellidoPaterno": "Figueroa", "apellidoMaterno": "Morales", "nombre": "María", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Alumno"},
-    {"codAlumno": 20209999, "apellidoPaterno": "Mendoza", "apellidoMaterno": "Rojas", "nombre": "Carlos", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Alumno"},
-    {"codAlumno": 20193377, "apellidoPaterno": "Campos", "apellidoMaterno": "Navarro", "nombre": "Fernanda", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Alumno"},
-    {"codAlumno": 20211222, "apellidoPaterno": "Paredes", "apellidoMaterno": "Molina", "nombre": "Alejandro", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Alumno"},
-    {"codAlumno": 20181111, "apellidoPaterno": "Ríos", "apellidoMaterno": "Salazar", "nombre": "Sofía", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Alumno"},
-    {"codProfesor": 20214234, "apellidoPaterno": "Gómez", "apellidoMaterno": "López", "nombre": "Ana", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Profesor"},
-    {"codProfesor": 20215678, "apellidoPaterno": "Martínez", "apellidoMaterno": "Ramírez", "nombre": "Pedro", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Profesor"},
-    {"codProfesor": 20216789, "apellidoPaterno": "Fernández", "apellidoMaterno": "García", "nombre": "Luisa", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Profesor"},
-    {"codProfesor": 20217654, "apellidoPaterno": "Rodríguez", "apellidoMaterno": "Pérez", "nombre": "Carlos", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Profesor"},
-    {"codProfesor": 20218345, "apellidoPaterno": "Sánchez", "apellidoMaterno": "Fernández", "nombre": "Ana", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Profesor"},
-    {"codProfesor": 20219999, "apellidoPaterno": "López", "apellidoMaterno": "Ramírez", "nombre": "Mario", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Profesor"},
-    {"codProfesor": 20211111, "apellidoPaterno": "Pérez", "apellidoMaterno": "Martínez", "nombre": "Isabel", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Profesor"},
-    {"codProfesor": 20212222, "apellidoPaterno": "García", "apellidoMaterno": "Sánchez", "nombre": "Ricardo", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Profesor"},
-    {"codProfesor": 20213333, "apellidoPaterno": "Martínez", "apellidoMaterno": "Pérez", "nombre": "Laura", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Profesor"},
-    {"codProfesor": 20214444, "apellidoPaterno": "Sánchez", "apellidoMaterno": "López", "nombre": "Diego", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Profesor"},
-    {"codProfesor": 20222058, "apellidoPaterno": "Hernández", "apellidoMaterno": "Silva", "nombre": "Javier", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Profesor"},
-    {"codProfesor": 20221735, "apellidoPaterno": "Gómez", "apellidoMaterno": "Mendoza", "nombre": "Verónica", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Profesor"},
-    {"codProfesor": 20222946, "apellidoPaterno": "Vargas", "apellidoMaterno": "Lara", "nombre": "Luis", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Profesor"},
-    {"codProfesor": 20222589, "apellidoPaterno": "Soto", "apellidoMaterno": "Cabrera", "nombre": "Mariana", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Profesor"},
-    {"codProfesor": 20221876, "apellidoPaterno": "Ortega", "apellidoMaterno": "Pérez", "nombre": "Andrés", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Profesor"},
-    {"codProfesor": 20223345, "apellidoPaterno": "Figueroa", "apellidoMaterno": "Morales", "nombre": "María", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Profesor"},
-    {"codProfesor": 20223999, "apellidoPaterno": "Mendoza", "apellidoMaterno": "Rojas", "nombre": "Carlos", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Profesor"},
-    {"codProfesor": 20223377, "apellidoPaterno": "Campos", "apellidoMaterno": "Navarro", "nombre": "Fernanda", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Profesor"},
-    {"codProfesor": 20222222, "apellidoPaterno": "Paredes", "apellidoMaterno": "Molina", "nombre": "Alejandro", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Profesor"},
-    {"codProfesor": 20223333, "apellidoPaterno": "Ríos", "apellidoMaterno": "Salazar", "nombre": "Sofía", "adeudaLib": false, "librosAdeudados": [""], "tieneLibSeparado": false, "libReservados": [""], "clase": "Profesor"}
-    ]
+    {
+      "codAlumno": 20192451,
+      "apellidoPaterno": "González",
+      "apellidoMaterno": "López",
+      "nombre": "Juana",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Alumno"
+    },
+    {
+      "codAlumno": 20213956,
+      "apellidoPaterno": "Rodríguez",
+      "apellidoMaterno": "Fernández",
+      "nombre": "Pedro",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Alumno"
+    },
+    {
+      "codAlumno": 20223957,
+      "apellidoPaterno": "Martínez",
+      "apellidoMaterno": "García",
+      "nombre": "Luisa",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Alumno"
+    },
+    {
+      "codAlumno": 20192458,
+      "apellidoPaterno": "Fernández",
+      "apellidoMaterno": "Pérez",
+      "nombre": "Carlos",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Alumno"
+    },
+    {
+      "codAlumno": 20213959,
+      "apellidoPaterno": "López",
+      "apellidoMaterno": "Sánchez",
+      "nombre": "Ana",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Alumno"
+    },
+    {
+      "codAlumno": 20223960,
+      "apellidoPaterno": "García",
+      "apellidoMaterno": "Ramírez",
+      "nombre": "Mario",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Alumno"
+    },
+    {
+      "codAlumno": 20192461,
+      "apellidoPaterno": "Pérez",
+      "apellidoMaterno": "Martínez",
+      "nombre": "Isabel",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Alumno"
+    },
+    {
+      "codAlumno": 20213962,
+      "apellidoPaterno": "Sánchez",
+      "apellidoMaterno": "Fernández",
+      "nombre": "Ricardo",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Alumno"
+    },
+    {
+      "codAlumno": 20223963,
+      "apellidoPaterno": "Ramírez",
+      "apellidoMaterno": "López",
+      "nombre": "Laura",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Alumno"
+    },
+    {
+      "codAlumno": 20192464,
+      "apellidoPaterno": "Martínez",
+      "apellidoMaterno": "Gómez",
+      "nombre": "Diego",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Alumno"
+    },
+    {
+      "codAlumno": 20204678,
+      "apellidoPaterno": "Hernández",
+      "apellidoMaterno": "Silva",
+      "nombre": "Javier",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Alumno"
+    },
+    {
+      "codAlumno": 20193215,
+      "apellidoPaterno": "Gómez",
+      "apellidoMaterno": "Mendoza",
+      "nombre": "Verónica",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Alumno"
+    },
+    {
+      "codAlumno": 20212345,
+      "apellidoPaterno": "Vargas",
+      "apellidoMaterno": "Lara",
+      "nombre": "Luis",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Alumno"
+    },
+    {
+      "codAlumno": 20185237,
+      "apellidoPaterno": "Soto",
+      "apellidoMaterno": "Cabrera",
+      "nombre": "Mariana",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Alumno"
+    },
+    {
+      "codAlumno": 20204567,
+      "apellidoPaterno": "Ortega",
+      "apellidoMaterno": "Pérez",
+      "nombre": "Andrés",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Alumno"
+    },
+    {
+      "codAlumno": 20198876,
+      "apellidoPaterno": "Figueroa",
+      "apellidoMaterno": "Morales",
+      "nombre": "María",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Alumno"
+    },
+    {
+      "codAlumno": 20209999,
+      "apellidoPaterno": "Mendoza",
+      "apellidoMaterno": "Rojas",
+      "nombre": "Carlos",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Alumno"
+    },
+    {
+      "codAlumno": 20193377,
+      "apellidoPaterno": "Campos",
+      "apellidoMaterno": "Navarro",
+      "nombre": "Fernanda",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Alumno"
+    },
+    {
+      "codAlumno": 20211222,
+      "apellidoPaterno": "Paredes",
+      "apellidoMaterno": "Molina",
+      "nombre": "Alejandro",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Alumno"
+    },
+    {
+      "codAlumno": 20181111,
+      "apellidoPaterno": "Ríos",
+      "apellidoMaterno": "Salazar",
+      "nombre": "Sofía",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Alumno"
+    },
+    {
+      "codProfesor": 20214234,
+      "apellidoPaterno": "Gómez",
+      "apellidoMaterno": "López",
+      "nombre": "Ana",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Profesor"
+    },
+    {
+      "codProfesor": 20215678,
+      "apellidoPaterno": "Martínez",
+      "apellidoMaterno": "Ramírez",
+      "nombre": "Pedro",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Profesor"
+    },
+    {
+      "codProfesor": 20216789,
+      "apellidoPaterno": "Fernández",
+      "apellidoMaterno": "García",
+      "nombre": "Luisa",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Profesor"
+    },
+    {
+      "codProfesor": 20217654,
+      "apellidoPaterno": "Rodríguez",
+      "apellidoMaterno": "Pérez",
+      "nombre": "Carlos",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Profesor"
+    },
+    {
+      "codProfesor": 20218345,
+      "apellidoPaterno": "Sánchez",
+      "apellidoMaterno": "Fernández",
+      "nombre": "Ana",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Profesor"
+    },
+    {
+      "codProfesor": 20219999,
+      "apellidoPaterno": "López",
+      "apellidoMaterno": "Ramírez",
+      "nombre": "Mario",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Profesor"
+    },
+    {
+      "codProfesor": 20211111,
+      "apellidoPaterno": "Pérez",
+      "apellidoMaterno": "Martínez",
+      "nombre": "Isabel",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Profesor"
+    },
+    {
+      "codProfesor": 20212222,
+      "apellidoPaterno": "García",
+      "apellidoMaterno": "Sánchez",
+      "nombre": "Ricardo",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Profesor"
+    },
+    {
+      "codProfesor": 20213333,
+      "apellidoPaterno": "Martínez",
+      "apellidoMaterno": "Pérez",
+      "nombre": "Laura",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Profesor"
+    },
+    {
+      "codProfesor": 20214444,
+      "apellidoPaterno": "Sánchez",
+      "apellidoMaterno": "López",
+      "nombre": "Diego",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Profesor"
+    },
+    {
+      "codProfesor": 20222058,
+      "apellidoPaterno": "Hernández",
+      "apellidoMaterno": "Silva",
+      "nombre": "Javier",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Profesor"
+    },
+    {
+      "codProfesor": 20221735,
+      "apellidoPaterno": "Gómez",
+      "apellidoMaterno": "Mendoza",
+      "nombre": "Verónica",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Profesor"
+    },
+    {
+      "codProfesor": 20222946,
+      "apellidoPaterno": "Vargas",
+      "apellidoMaterno": "Lara",
+      "nombre": "Luis",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Profesor"
+    },
+    {
+      "codProfesor": 20222589,
+      "apellidoPaterno": "Soto",
+      "apellidoMaterno": "Cabrera",
+      "nombre": "Mariana",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Profesor"
+    },
+    {
+      "codProfesor": 20221876,
+      "apellidoPaterno": "Ortega",
+      "apellidoMaterno": "Pérez",
+      "nombre": "Andrés",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Profesor"
+    },
+    {
+      "codProfesor": 20223345,
+      "apellidoPaterno": "Figueroa",
+      "apellidoMaterno": "Morales",
+      "nombre": "María",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Profesor"
+    },
+    {
+      "codProfesor": 20223999,
+      "apellidoPaterno": "Mendoza",
+      "apellidoMaterno": "Rojas",
+      "nombre": "Carlos",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Profesor"
+    },
+    {
+      "codProfesor": 20223377,
+      "apellidoPaterno": "Campos",
+      "apellidoMaterno": "Navarro",
+      "nombre": "Fernanda",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Profesor"
+    },
+    {
+      "codProfesor": 20222222,
+      "apellidoPaterno": "Paredes",
+      "apellidoMaterno": "Molina",
+      "nombre": "Alejandro",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Profesor"
+    },
+    {
+      "codProfesor": 20223333,
+      "apellidoPaterno": "Ríos",
+      "apellidoMaterno": "Salazar",
+      "nombre": "Sofía",
+      "adeudaLib": false,
+      "librosAdeudados": [
+        ""
+      ],
+      "tieneLibSeparado": false,
+      "libReservados": [
+        ""
+      ],
+      "clase": "Profesor"
+    }
+  ]
