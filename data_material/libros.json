@@ -1,7 +1,7 @@
 [
   {"titulo":"Luna de Pluton","area":"Terror","autor":"Ángel David Revilla Lenoci","paginas":60,"yearPublicacion":2016,"stock":6},
   {"titulo":"Sueños de acero y neón","area":"Ciberpunk","autor":"Jordi Wild","paginas":70,"yearPublicacion":2018,"stock":3},
-  {"titulo":"El libro troll","area":"Troll","autor":"Rubius","paginas":2,"yearPublicacion":2013,"stock":9},
+  {"titulo":"El libro troll","area":"Troll","autor":"Rubius","paginas":2,"yearPublicacion":2013,"stock":1},
   {"titulo": "Los juegos del hambre", "area": "Ciencia Ficción", "autor": "Suzanne Collins", "paginas": 374, "yearPublicacion": 2008,"stock":7},
   {"titulo": "Cien años de soledad", "area": "Realismo Mágico", "autor": "Gabriel García Márquez", "paginas": 432, "yearPublicacion": 1967,"stock":5},
   {"titulo": "El código Da Vinci", "area": "Misterio", "autor": "Dan Brown", "paginas": 454, "yearPublicacion": 2003,"stock":2},

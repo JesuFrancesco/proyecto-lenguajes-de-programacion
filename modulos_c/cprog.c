@@ -5,7 +5,9 @@
 
 enum TIPO_BUSQUEDA{
   AUTOR = 1,
-  TITULO = 2
+  TITULO = 2,
+  AREA = 3,
+  STOCK = 4
 };
 
 void buscarLibro(char *nombreArchivo, int tipo, char *cadena) {
@@ -75,6 +77,46 @@ void buscarLibro(char *nombreArchivo, int tipo, char *cadena) {
               if (jsonTitulo != NULL && cJSON_IsString(jsonTitulo)) {
                 char *tituloEnJson = jsonTitulo -> valuestring; // Obtiene el valor de "titulo" como cadena 
                 printf("- Por el autor: %s %s\n", cJSON_GetObjectItem(libro, "autor")->valuestring, tituloEnJson);
+              }
+            }
+          }
+        }
+        break;
+
+      case AREA:
+        printf("Libros de area %s:\n", cadena); // EMPEZAR DOCUMENTACION
+
+        for (int i = 0; i < nroLibros; i++) {
+          libro = cJSON_GetArrayItem(root, i);
+          cJSON *jsonArea = cJSON_GetObjectItem(libro, "area");
+
+          if (jsonArea != NULL && cJSON_IsString(jsonArea)) {
+            char *areaEnJson = jsonArea -> valuestring; // Obtiene el valor de "area"
+            if (strcmp(areaEnJson, cadena) == 0) {
+              // Encontramos al area
+              cJSON *jsonTitulo = cJSON_GetObjectItem(libro, "titulo");
+              if (jsonTitulo != NULL && cJSON_IsString(jsonTitulo)) {
+                char *tituloEnJson = jsonTitulo -> valuestring;
+                printf("- %s\n", tituloEnJson);
+              }
+            }
+          }
+        }
+        break;
+
+      case STOCK:
+      printf("Libros en stock:\n");
+        for (int i = 0; i < nroLibros; i++) {
+          libro = cJSON_GetArrayItem(root, i);
+          cJSON *jsoStock = cJSON_GetObjectItem(libro, "stock");
+          if (jsoStock != NULL && cJSON_IsNumber(jsoStock)) {
+            int stockEnJson = jsoStock->valueint;
+            if (stockEnJson > 0) {
+              // Libro disponible
+              cJSON *jsonTitulo = cJSON_GetObjectItem(libro, "titulo");
+              if (jsonTitulo != NULL && cJSON_IsString(jsonTitulo)) {
+                char *tituloEnJson = jsonTitulo -> valuestring;
+                printf("- %s\n", tituloEnJson);
               }
             }
           }
