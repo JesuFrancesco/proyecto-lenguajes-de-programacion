@@ -5,7 +5,7 @@ Dir["clases/media/*.rb"].each { |claseMe| require_relative claseMe }
 
 def printObj(objeto)
     if objeto.is_a?(Libro) then
-    "- Libro #{objeto.titulo} del autor #{objeto.autor} perteneciente al area #{objeto.area}"
+    "- Libro #{objeto.titulo} del autor #{objeto.autor} perteneciente al area #{objeto.area}" + "\n\t-> Stock #{objeto.stock}"
     elsif objeto.is_a?(Alumno)
     "- Alumno #{objeto.apellidoPaterno} #{objeto.apellidoMaterno}, #{objeto.nombre} de codigo #{objeto.codAlumno}"
     elsif objeto.is_a?(Profesor)
