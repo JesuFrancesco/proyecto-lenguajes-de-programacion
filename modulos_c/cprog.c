@@ -3,7 +3,12 @@
 #include <string.h>
 #include "cJSON/cJSON.h" // Importamos 
 
-void buscarLibroPorAutor(char *nombreArchivo, char *autor) {
+enum TIPO_BUSQUEDA{
+  AUTOR = 1,
+  TITULO = 2
+};
+
+void buscarLibro(char *nombreArchivo, int tipo, char *cadena) {
   // Abre el archivo en modo lectura
   FILE *archivo = fopen(nombreArchivo, "r");
   if (archivo == NULL) {
@@ -32,37 +37,68 @@ void buscarLibroPorAutor(char *nombreArchivo, char *autor) {
     int nroLibros = cJSON_GetArraySize(root);
     cJSON *libro;
 
-    printf("Libros por %s:\n", autor); // EMPEZAR DOCUMENTACION
+    switch (tipo)
+    {
+      case AUTOR:
+        printf("Libros por %s:\n", cadena); // EMPEZAR DOCUMENTACION
 
-    for (int i = 0; i < nroLibros; i++) {
-      libro = cJSON_GetArrayItem(root, i);
-      cJSON *jsonAutor = cJSON_GetObjectItem(libro, "autor");
+        for (int i = 0; i < nroLibros; i++) {
+          libro = cJSON_GetArrayItem(root, i);
+          cJSON *jsonAutor = cJSON_GetObjectItem(libro, "autor");
 
-      if (jsonAutor != NULL && cJSON_IsString(jsonAutor)) {
-        char *autorEnJson = jsonAutor -> valuestring; // Obtiene el valor de "autor" como cadena
-        if (strcmp(autorEnJson, autor) == 0) { // Compara el autor con el valor en el JSON
-          // Encontramos al autor
-          cJSON *jsonTitulo = cJSON_GetObjectItem(libro, "titulo");
-          if (jsonTitulo != NULL && cJSON_IsString(jsonTitulo)) {
-            char *tituloEnJson = jsonTitulo -> valuestring; // Obtiene el valor de "titulo" como cadena 
-            printf("- %s\n", tituloEnJson);
+          if (jsonAutor != NULL && cJSON_IsString(jsonAutor)) {
+            char *autorEnJson = jsonAutor -> valuestring; // Obtiene el valor de "autor" como cadena
+            if (strcmp(autorEnJson, cadena) == 0) { // Compara el autor con el valor en el JSON
+              // Encontramos al autor
+              cJSON *jsonTitulo = cJSON_GetObjectItem(libro, "titulo");
+              if (jsonTitulo != NULL && cJSON_IsString(jsonTitulo)) {
+                char *tituloEnJson = jsonTitulo -> valuestring; // Obtiene el valor de "titulo" como cadena 
+                printf("- %s\n", tituloEnJson);
+              }
+            }
           }
         }
-      }
+        break;
+
+      case TITULO:
+        printf("Libros con titulo %s:\n", cadena); // EMPEZAR DOCUMENTACION
+
+        for (int i = 0; i < nroLibros; i++) {
+          libro = cJSON_GetArrayItem(root, i);
+          cJSON *jsonTitulo = cJSON_GetObjectItem(libro, "titulo");
+
+          if (jsonTitulo != NULL && cJSON_IsString(jsonTitulo)) {
+            char *autorEnJson = jsonTitulo -> valuestring; // Obtiene el valor de "titulo" como cadena
+            if (strcmp(autorEnJson, cadena) == 0) { // Compara el titulo con el valor en el JSON
+              // Encontramos al autor
+              cJSON *jsonTitulo = cJSON_GetObjectItem(libro, "titulo");
+              if (jsonTitulo != NULL && cJSON_IsString(jsonTitulo)) {
+                char *tituloEnJson = jsonTitulo -> valuestring; // Obtiene el valor de "titulo" como cadena 
+                printf("- Por el autor: %s %s\n", cJSON_GetObjectItem(libro, "autor")->valuestring, tituloEnJson);
+              }
+            }
+          }
+        }
+        break;
+      
+      default:
+        break;
     }
+    
   }
   cJSON_Delete(root); // Libera la memoria utilizada por el objeto cJSON
 }
 
 int main(int argc, char const *argv[])
 {
-    if(argc <= 1) return -1;
+    if(argc != 3) return -1;
 
-    char *autor = argv[1];
+    int tipo = atoi(argv[1]); // Numero 1 para buscar por autor, numero 2 para buscar por titulo
+    char *cadena = argv[2];
 
     char *nombreArchivo = "data_material\\libros.json";
 
-    buscarLibroPorAutor(nombreArchivo, autor);
+    buscarLibro(nombreArchivo, tipo, cadena);
 
     return 0;
 }

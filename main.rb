@@ -138,11 +138,36 @@ while true do
 
             # Búsqueda C
             when ACCION::BUSQUEDA
-                puts "Ingrese autor a buscar"
-                autor = gets.chomp # para quitar el /n del final
-                cmd = `modulos_c\\cprog.exe "#{autor}"`
+                puts "Ingrese método de búsqueda"
+                puts "1. Autor"
+                puts "2. Titulo"
+                puts "3. Salir"
+                print "-> "
+                opBusq = gets.to_i
+                while opBusq < 1 || opBusq > 3 do
+                    puts "Opción inválida"
+                    print "-> "
+                    opBusq = gets.to_i
+                end
+                if opBusq == 3 then next end # Para salir
                 system "cls"
-                puts(cmd) # Realiza la función en el programa compilado de C mediante un cmd interno (?)
+                # Ordenamiento en base a atributo
+                case opBusq
+                when 1
+                    puts "Ingrese autor a buscar"
+                    autor = gets.chomp # para quitar el /n del final
+                    cmd = `modulos_c\\cprog.exe #{1} "#{autor}"`
+                    system "cls"
+                    puts(cmd) # Realiza la función en el programa compilado de C mediante un cmd interno (?)
+                when 2
+                    puts "Ingrese titulo a buscar"
+                    autor = gets.chomp # para quitar el /n del final
+                    cmd = `modulos_c\\cprog.exe #{2} "#{autor}"`
+                    system "cls"
+                    puts(cmd) # Realiza la función en el programa compilado de C mediante un cmd interno (?)
+                else
+                    puts "Opción inválida."
+                end
                 system "pause"
 
             # Filtros con Haskell
@@ -152,7 +177,7 @@ while true do
                 puts 'pos no se'
             end
 
-        
+
         when 2
             # Prueba para guardar el array a json
             # guardarJSON_Array(alumnos, "data_usuario/alumnos.json")
