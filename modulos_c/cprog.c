@@ -7,10 +7,11 @@ enum TIPO_BUSQUEDA{
   AUTOR = 1,
   TITULO = 2,
   AREA = 3,
-  STOCK = 4
+  TIPO = 4,
+  STOCK = 5
 };
 
-void buscarLibro(char *nombreArchivo, int tipo, char *cadena) {
+void buscarLibro(char *nombreArchivo, int filtro, char *cadena) {
   // Abre el archivo en modo lectura
   FILE *archivo = fopen(nombreArchivo, "r");
   if (archivo == NULL) {
@@ -39,10 +40,10 @@ void buscarLibro(char *nombreArchivo, int tipo, char *cadena) {
     int nroLibros = cJSON_GetArraySize(root);
     cJSON *libro;
 
-    switch (tipo)
+    switch (filtro)
     {
       case AUTOR:
-        printf("Libros por %s:\n", cadena); // EMPEZAR DOCUMENTACION
+        printf("Material hecho por %s:\n", cadena); // EMPEZAR DOCUMENTACION
 
         for (int i = 0; i < nroLibros; i++) {
           libro = cJSON_GetArrayItem(root, i);
@@ -63,7 +64,7 @@ void buscarLibro(char *nombreArchivo, int tipo, char *cadena) {
         break;
 
       case TITULO:
-        printf("Libros con titulo %s:\n", cadena); // EMPEZAR DOCUMENTACION
+        printf("Material con titulo %s:\n", cadena); // EMPEZAR DOCUMENTACION
 
         for (int i = 0; i < nroLibros; i++) {
           libro = cJSON_GetArrayItem(root, i);
@@ -84,7 +85,7 @@ void buscarLibro(char *nombreArchivo, int tipo, char *cadena) {
         break;
 
       case AREA:
-        printf("Libros de area %s:\n", cadena); // EMPEZAR DOCUMENTACION
+        printf("Material de area %s:\n", cadena); // EMPEZAR DOCUMENTACION
 
         for (int i = 0; i < nroLibros; i++) {
           libro = cJSON_GetArrayItem(root, i);
@@ -104,8 +105,29 @@ void buscarLibro(char *nombreArchivo, int tipo, char *cadena) {
         }
         break;
 
+      case TIPO:
+        printf("Material de tipo %s:\n", cadena); // EMPEZAR DOCUMENTACION
+
+        for (int i = 0; i < nroLibros; i++) {
+          libro = cJSON_GetArrayItem(root, i);
+          cJSON *jsonTipo = cJSON_GetObjectItem(libro, "clase");
+
+          if (jsonTipo != NULL && cJSON_IsString(jsonTipo)) {
+            char *tipoEnJson = jsonTipo -> valuestring; // Obtiene el valor de "area"
+            if (strcmp(tipoEnJson, cadena) == 0) {
+              // Tipo coincide
+              cJSON *jsonTitulo = cJSON_GetObjectItem(libro, "titulo");
+              if (jsonTitulo != NULL && cJSON_IsString(jsonTitulo)) {
+                char *tituloEnJson = jsonTitulo -> valuestring;
+                printf("- %s\n", tituloEnJson);
+              }
+            }
+          }
+        }
+        break;
+
       case STOCK:
-      printf("Libros en stock:\n");
+      printf("Material en stock:\n");
         for (int i = 0; i < nroLibros; i++) {
           libro = cJSON_GetArrayItem(root, i);
           cJSON *jsoStock = cJSON_GetObjectItem(libro, "stock");

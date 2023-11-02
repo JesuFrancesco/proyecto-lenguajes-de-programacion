@@ -88,7 +88,7 @@ if __FILE__ != $0 then exit end
         system "color a"
 
         # Opciones
-        puts "1. Ver libros"
+        puts "1. Ver material"
         puts "2. Ver usuarios"
         puts "3. Salir"
         print "-> "
@@ -126,14 +126,15 @@ if __FILE__ != $0 then exit end
                     puts "Ingrese método de búsqueda"
                     puts "1. Autor"
                     puts "2. Titulo"
-                    puts "3. Area"
-                    puts "4. Disponibilidad"
-                    puts "5. Material ya reservado"
-                    puts "6. Usuarios deudores"
-                    puts "7. Salir"
+                    puts "3. Area / Género"
+                    puts "4. Tipo (e.g. Libro, Journal...)"
+                    puts "5. Disponibilidad"
+                    puts "6. Material ya reservado"
+                    puts "7. Usuarios deudores"
+                    puts "8. Salir"
                     print "-> "
-                    opBusq = getOp(1,7)
-                    if opBusq == 7 then next end # Para salir
+                    opBusq = getOp(1,8)
+                    if opBusq == 8 then next end # Para salir
                     system "cls"
                     # Ordenamiento en base a atributo
                     case opBusq
@@ -142,13 +143,13 @@ if __FILE__ != $0 then exit end
                         autor = gets.chomp # para quitar el /n del final
                         cmd = `modulos_c\\cprog.exe #{1} "#{autor}"`
                         system "cls"
-                        puts(cmd) # Realiza la función en el programa compilado de C mediante un cmd interno (?)
+                        puts(cmd) # Realiza la función en el programa compilado de C mediante un cmd interno
                     when 2
                         puts "Ingrese titulo a buscar"
                         autor = gets.chomp # para quitar el /n del final
                         cmd = `modulos_c\\cprog.exe #{2} "#{autor}"`
                         system "cls"
-                        puts(cmd) # Realiza la función en el programa compilado de C mediante un cmd interno (?)
+                        puts(cmd) # Realiza la función en el programa compilado de C mediante un cmd interno
                     when 3
                         puts "Ingrese el área a buscar"
                         area = gets.chomp
@@ -156,15 +157,21 @@ if __FILE__ != $0 then exit end
                         system "cls"
                         puts(cmd)
                     when 4
-                        puts "Libros disponibles"
-                        stock = "si me quitas no funciono"
-                        cmd = `modulos_c\\cprog.exe #{4} "#{stock}"` #Devuelve todos los libros con stock diferente de 0
+                        puts "Ingrese el tipo a buscar"
+                        tipo = gets.chomp
+                        cmd = `modulos_c\\cprog.exe #{4} "#{tipo}"`
                         system "cls"
                         puts(cmd)
                     when 5
+                        puts "Libros disponibles"
+                        stock = "si me quitas no funciono"
+                        cmd = `modulos_c\\cprog.exe #{5} "#{stock}"` #Devuelve todos los libros con stock diferente de 0
+                        system "cls"
+                        puts(cmd)
+                    when 6
                         puts "Libros ya reservados"
                         system "cls"
-                    when 6
+                    when 7
                         puts "Usuarios deudores"
                         system "cls"
                     else
