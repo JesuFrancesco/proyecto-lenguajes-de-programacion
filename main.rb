@@ -177,7 +177,8 @@ if __FILE__ != $0 then exit end
                         puts(cmd)
                     when 6
                         puts "Libros ya reservados"
-                        system "cls"
+                        cmd = `modulos_hs\\hsprog.exe "arg1" "arg2"`
+                        puts(cmd)
                     when 7
                         puts "Usuarios deudores"
                         system "cls"

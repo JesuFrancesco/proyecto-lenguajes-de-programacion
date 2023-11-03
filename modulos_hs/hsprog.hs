@@ -1,67 +1,57 @@
+{-# LANGUAGE DeriveGeneric #-}
 import System.Environment
+import GHC.Generics
 import Data.Maybe
+import Data.Aeson
+import qualified Data.ByteString.Lazy as B
 
---Funcion para filtro por titulo:
-filtroPorTitulo :: String -> [(String, String, String, Int, Int)] -> Maybe [(String, String, String, Int, Int)]
-filtroPorTitulo _ [] = Just []  -- Caso de lista vacia
-filtroPorTitulo titulo libros
-    |any (\(t, _, _, _, _) -> t == titulo) libros = Just (filter (\(t, a, au, p, an) -> t == titulo) libros)
-    |otherwise = Nothing
+data Libro = Libro { tituloL :: String
+                         , areaL :: String
+                         , autorL :: String
+                         , paginasL :: Int
+                         , yearPublicacionL :: Int
+                         , stockL :: Int
+                         , claseL :: String                         
+                         } deriving (Show, Generic)
 
---Funcion para filtro por Area:
-filtroPorArea :: String -> [(String, String, String, Int, Int)] -> Maybe [(String, String, String, Int, Int)]
-filtroPorArea _ [] = Just []  -- Caso de lista vacía
-filtroPorArea area libros
-    | any (\(_, a, _, _, _) -> a == area) libros = Just (filter (\(_, a, _, _, _) -> a == area) libros)
-    | otherwise = Nothing
+data Journal = Journal { tituloJ :: String
+                         , areaJ :: String
+                         , autorJ :: String
+                         , yearPublicacionJ :: Int
+                         , stockJ :: Int
+                         , claseJ :: String                         
+                         } deriving (Show, Generic)
 
---Funcion para filtro por Autor:
-filtroPorAutor :: String -> [(String, String, String, Int, Int)] -> Maybe [(String, String, String, Int, Int)]
-filtroPorAutor _ [] = Just []  -- Caso de lista vacía
-filtroPorAutor autor libros
-    | any (\(_, _, a, _, _) -> a == autor) libros = Just (filter (\(_, _, a, _, _) -> a == autor) libros)
-    | otherwise = Nothing
-    
---Funcion para filtro por Paginas:
+data ActaCongreso = ActaCongreso { tituloAC :: String
+                         , areaAC :: String
+                         , autorAC :: String
+                         , yearPublicacionAC :: Int
+                         , stockAC :: Int
+                         , claseAC :: String                         
+                         } deriving (Show, Generic)
 
---Funcion para filtro Year:
-filtroYear :: Int -> [(String, String, String, Int, Int)] -> Maybe [(String, String, String, Int, Int)]
-filtroYear _ [] = Just []  -- Caso de lista vacía
-filtroYear year libros
-    | any (\(_, _, _, _, y) -> y == year) libros = Just (filter (\(_, _, _, _, y) -> y == year) libros)
-    | otherwise = Nothing
 
-main :: IO()
+instance FromJSON Libro
+instance ToJSON Libro
+
+instance FromJSON Journal
+instance ToJSON Journal
+
+instance FromJSON ActaCongreso
+instance ToJSON ActaCongreso
+
+leerJSON :: FilePath -> IO (Maybe [Value])
+leerJSON ruta = do
+  contenido <- B.readFile ruta
+  return $ decode contenido
+
+main :: IO ()
 main = do
-    x <- getArgs
-    print x
+    input <- getArgs -- lista de argumentos
 
-    -- TEST FILTROS
-    let listaDeLibros = [ ("Libro 1", "Ciencia", "Autor 1", 200, 2020), ("Libro 2", "Historia", "Autor 2", 300, 2019), ("Libro 3", "Tecnología", "Autor 3", 250, 2021), ("Libro 4", "Ciencia", "Autor 1", 150, 2018)]
-    let resultado1 = filtroPorTitulo "Libro 1" listaDeLibros
-    let resultado2 = filtroPorArea "Ciencia" listaDeLibros
-    let resultado3 = filtroPorAutor "Autor 1" listaDeLibros
-    --let resultado4 = aun no acabo
-    let resultado5 = filtroYear 2020 listaDeLibros
+    putStrLn $ "Input: " ++ show input
 
-    --Imprimir filtro Titulo:
-    case resultado1 of
-        Nothing -> putStrLn ""
-        Just libros -> print libros
-
-    --Imprimir filtro Area:
-    case resultado2 of
-        Nothing -> putStrLn ""
-        Just libros -> print libros
-
-    --Imprimir filtro Autor:
-    case resultado3 of
-        Nothing -> putStrLn ""
-        Just libros -> print libros
-
-    --Imprimir filtro Paginas:
-
-    --Imprimir filtro Año:
-    case resultado5 of
-        Nothing -> putStrLn ""
-        Just libros -> print libros
+    objects <- leerJSON "data_material\\material.json"
+    case objects of
+        Nothing -> putStrLn "Error, no se pudo castear el archivo JSON"
+        Just objs -> putStrLn $ (show objs)
