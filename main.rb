@@ -68,10 +68,20 @@ if __FILE__ != $0 then exit end
     # Librerías
     require 'json'
 
+    # Enums en Ruby para mayor readability !!!!!
     module ACCION
-        BUSQUEDA = 1
-        ORDENAMIENTO = 2
-        FILTRO = 3
+        BUSQUEDAFILTRO = 1
+        PRESTAMO = 2
+    end
+
+    module BUSQ
+        AUTOR = 1
+        TITULO = 2
+        AREA = 3
+        TIPO = 4
+        DISPONIBILIDAD = 5
+        FRESERVA = 6
+        FDEUDORES = 7
     end
 
     module CLASE
@@ -128,8 +138,8 @@ if __FILE__ != $0 then exit end
                 # system "cls"
 
                 case opAccion
-                # Búsqueda C
-                when ACCION::BUSQUEDA
+                # Búsqueda y filtros (C y Haskell)
+                when ACCION::BUSQUEDAFILTRO
                     puts "Ingrese método de búsqueda"
                     puts "1. Autor"
                     puts "2. Titulo"
@@ -145,49 +155,42 @@ if __FILE__ != $0 then exit end
                     system "cls"
                     # Ordenamiento en base a atributo
                     case opBusq
-                    when 1
+                    when BUSQ::AUTOR
                         puts "Ingrese autor a buscar (C)"
                         autor = gets.chomp # para quitar el /n del final
                         cmd = `modulos_c\\cprog.exe #{1} "#{autor}"`
-                        system "cls"
-                        puts(cmd) # Realiza la función en el programa compilado de C mediante un cmd interno
-                    when 2
+
+                    when BUSQ::TITULO
                         puts "Ingrese titulo a buscar (C)"
                         autor = gets.chomp # para quitar el /n del final
                         cmd = `modulos_c\\cprog.exe #{2} "#{autor}"`
-                        system "cls"
-                        puts(cmd) # Realiza la función en el programa compilado de C mediante un cmd interno
-                    when 3
+
+                    when BUSQ::AREA
                         puts "Ingrese el área a buscar (C)"
                         area = gets.chomp
                         cmd = `modulos_c\\cprog.exe #{3} "#{area}"`
-                        system "cls"
-                        puts(cmd)
-                    when 4
+
+                    when BUSQ::TIPO
                         puts "Ingrese el tipo a buscar (C)"
                         tipo = gets.chomp
                         cmd = `modulos_c\\cprog.exe #{4} "#{tipo}"`
-                        system "cls"
-                        puts(cmd)
-                    when 5
+
+                    when BUSQ::DISPONIBILIDAD
                         puts "Libros disponibles (C)"
                         stock = "si me quitas no funciono"
                         cmd = `modulos_c\\cprog.exe #{5} "#{stock}"` #Devuelve todos los libros con stock diferente de 0
-                        system "cls"
-                        puts(cmd)
-                    when 6
+
+                    when BUSQ::FRESERVA
                         # Lectura de json a array de determinados usuarios
                         array = leerJSON_Array("data_usuario/usuarios.json", [CLASE::ALUMNO, CLASE::PROFESOR])
                         dicc = []
                         for usuario in array do
                             dicc << "(#{usuario.tieneLibSeparado == true ? "True" : "False"}, #{usuario.tieneLibSeparado == true ? usuario.libReservados : "[]"})"
                         end
-                        # puts dicc
                         puts "Libros ya reservados (Haskell)"
-                        system "pause"
                         cmd = `modulos_hs\\hsReserva.exe #{dicc}`
-                        puts(cmd)
-                    when 7
+
+                    when BUSQ::FDEUDORES
                         puts "Usuarios deudores (Haskell)"
                         # Lectura de json a array de determinados usuarios
                         array = leerJSON_Array("data_usuario/usuarios.json", [CLASE::ALUMNO, CLASE::PROFESOR])
@@ -195,20 +198,21 @@ if __FILE__ != $0 then exit end
                         for usuario in array do
                             dicc << "(\"#{usuario.apellidoPaterno} #{usuario.apellidoPaterno} #{usuario.nombre}\", #{usuario.adeudaLib == true ? "True" : "False"})"
                         end
-                        # puts dicc
-                        system "pause"
                         cmd = `modulos_hs\\hsAdeuda.exe #{dicc}`
-                        puts(cmd)
 
-                        # system "cls"
                     else
                         puts "Opción inválida."
                     end
+                    system "cls"
+
+                    # Mostrar interfaz de C o Haskell
+                    puts(cmd)
                     system "pause"
 
                 # Filtros con Haskell
-                when ACCION::FILTRO
-                    #TODO FILTRO
+                when ACCION::PRESTAMO
+                    puts "hey" # TODO CONEXION CON 'prestamo.rb'
+
                 else
                     puts 'pos no se'
                 end
@@ -240,7 +244,7 @@ if __FILE__ != $0 then exit end
                 # Lectura de json a array de determinados usuarios
                 array = leerJSON_Array("data_usuario/usuarios.json", clases)
                 for usuario in array do
-                    puts printObj(ususario)
+                    puts printObj(usuario)
                 end
                 system "pause"
 
