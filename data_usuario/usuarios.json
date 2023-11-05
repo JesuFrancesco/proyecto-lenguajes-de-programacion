@@ -6,26 +6,26 @@
       "nombre": "Juana",
       "adeudaLib": false,
       "librosAdeudados": [
-        ""
+        "Los miserables"
       ],
-      "tieneLibSeparado": false,
+      "tieneLibSeparado": true,
       "libReservados": [
-        ""
+        "Luna de pluton"
       ],
       "clase": "Alumno"
     },
     {
       "codAlumno": 20213956,
-      "apellidoPaterno": "Rodríguez",
+      "apellidoPaterno": "Rodriguez",
       "apellidoMaterno": "Fernández",
       "nombre": "Pedro",
-      "adeudaLib": false,
+      "adeudaLib": true,
       "librosAdeudados": [
-        ""
+        "El libro troll"
       ],
-      "tieneLibSeparado": false,
+      "tieneLibSeparado": true,
       "libReservados": [
-        ""
+        "Los miserables"
       ],
       "clase": "Alumno"
     },

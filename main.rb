@@ -146,42 +146,61 @@ if __FILE__ != $0 then exit end
                     # Ordenamiento en base a atributo
                     case opBusq
                     when 1
-                        puts "Ingrese autor a buscar"
+                        puts "Ingrese autor a buscar (C)"
                         autor = gets.chomp # para quitar el /n del final
                         cmd = `modulos_c\\cprog.exe #{1} "#{autor}"`
                         system "cls"
                         puts(cmd) # Realiza la función en el programa compilado de C mediante un cmd interno
                     when 2
-                        puts "Ingrese titulo a buscar"
+                        puts "Ingrese titulo a buscar (C)"
                         autor = gets.chomp # para quitar el /n del final
                         cmd = `modulos_c\\cprog.exe #{2} "#{autor}"`
                         system "cls"
                         puts(cmd) # Realiza la función en el programa compilado de C mediante un cmd interno
                     when 3
-                        puts "Ingrese el área a buscar"
+                        puts "Ingrese el área a buscar (C)"
                         area = gets.chomp
                         cmd = `modulos_c\\cprog.exe #{3} "#{area}"`
                         system "cls"
                         puts(cmd)
                     when 4
-                        puts "Ingrese el tipo a buscar"
+                        puts "Ingrese el tipo a buscar (C)"
                         tipo = gets.chomp
                         cmd = `modulos_c\\cprog.exe #{4} "#{tipo}"`
                         system "cls"
                         puts(cmd)
                     when 5
-                        puts "Libros disponibles"
+                        puts "Libros disponibles (C)"
                         stock = "si me quitas no funciono"
                         cmd = `modulos_c\\cprog.exe #{5} "#{stock}"` #Devuelve todos los libros con stock diferente de 0
                         system "cls"
                         puts(cmd)
                     when 6
-                        puts "Libros ya reservados"
-                        cmd = `modulos_hs\\hsprog.exe "arg1" "arg2"`
+                        # Lectura de json a array de determinados usuarios
+                        array = leerJSON_Array("data_usuario/usuarios.json", [CLASE::ALUMNO, CLASE::PROFESOR])
+                        dicc = []
+                        for usuario in array do
+                            dicc << "(#{usuario.tieneLibSeparado == true ? "True" : "False"}, #{usuario.tieneLibSeparado == true ? usuario.libReservados : "[]"})"
+                        end
+                        # puts dicc
+                        puts "Libros ya reservados (Haskell)"
+                        system "pause"
+                        cmd = `modulos_hs\\hsReserva.exe #{dicc}`
                         puts(cmd)
                     when 7
-                        puts "Usuarios deudores"
-                        system "cls"
+                        puts "Usuarios deudores (Haskell)"
+                        # Lectura de json a array de determinados usuarios
+                        array = leerJSON_Array("data_usuario/usuarios.json", [CLASE::ALUMNO, CLASE::PROFESOR])
+                        dicc = []
+                        for usuario in array do
+                            dicc << "(\"#{usuario.apellidoPaterno} #{usuario.apellidoPaterno} #{usuario.nombre}\", #{usuario.adeudaLib == true ? "True" : "False"})"
+                        end
+                        # puts dicc
+                        system "pause"
+                        cmd = `modulos_hs\\hsAdeuda.exe #{dicc}`
+                        puts(cmd)
+
+                        # system "cls"
                     else
                         puts "Opción inválida."
                     end
@@ -218,10 +237,10 @@ if __FILE__ != $0 then exit end
                     clases = [CLASE::ALUMNO, CLASE::PROFESOR]
                 end
 
-                # Lectura de json a array de alumnos
+                # Lectura de json a array de determinados usuarios
                 array = leerJSON_Array("data_usuario/usuarios.json", clases)
-                for material in array do
-                    puts printObj(material)
+                for usuario in array do
+                    puts printObj(ususario)
                 end
                 system "pause"
 
