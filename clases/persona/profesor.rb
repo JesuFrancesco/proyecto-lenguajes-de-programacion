@@ -10,6 +10,14 @@ class Profesor < Usuario
     super(apellidoPaterno, apellidoMaterno, nombre)
   end
 
+  def self.maxLibro
+    @@maxLibro
+  end
+
+  def self.maxTiempo
+    @@maxTiempo
+  end
+
   def exp_json()
     {
       codProfesor: @codProfesor,

@@ -1,3 +1,6 @@
+Dir["clases/persona/*.rb"].each { |clasePer| require_relative clasePer }
+Dir["clases/media/*.rb"].each { |claseMe| require_relative claseMe }
+
 require 'json'
 
 def seleccionar_libro(diccionario)
@@ -14,6 +17,7 @@ def seleccionar_libro(diccionario)
     end # Fin del bloque condicional
   end # Fin del ciclo while
 end # Fin de la definición de la función
+
 
 def contar_libros_reservados_por_ruta(ruta, nombre)
   # Cargar los datos de los usuarios
@@ -59,11 +63,28 @@ def actualizar_libro(usuario_codigo, titulo_libro)
       puts "Libro actualizado: #{titulo_libro} reservado para el usuario #{usuario_codigo}."
     else
       puts "El libro no está disponible en stock o no existe."
+      puts "¿Desea que se le notifique cuando este disponible? (S/N)"
+      print "-> "
+      op = gets.chomp
+      while op != "S" || op != "N" do
+        puts "Solo Si (S) o No (N)"
+        print "-> "
+        op = gets.chomp
+      end
+      #
+      if op == "S" then
+        puts "hacer algo"
+
+      else
+        puts "ok"
+      end
+
     end
   else
     puts "El usuario no fue encontrado."
   end
 end
+
 
 #Lectura sin restricciones
 def leer_json_v2(archivo)
@@ -75,14 +96,16 @@ def leer_json_v2(archivo)
   return datos
 end
 
+
 #Funcion para guardar datos en archivo json
 def guardar_json(archivo, datos)
   # Abre el archivo en modo escritura ('w').
   File.open(archivo, 'w') do |file|
     # Con 'JSON.dump', convierte la estructura de datos 'datos' en una cadena JSON y la escribe en el archivo.
-    file.write(JSON.dump(datos))
+    file.write(JSON.pretty_generate(datos))
   end
 end
+
 
 def leer_json(archivo)
   contenido = File.read(archivo)
@@ -100,8 +123,6 @@ def leer_json(archivo)
   return diccionario
 end
 
-
-
 def existe_codigo(ruta_archivo, usuario_codigo)
   usuarios_data = leer_json_v2(ruta_archivo)
 
@@ -118,7 +139,7 @@ def nombre_usuario_por_codigo(ruta, codigo)
   datos = leer_json_v2(ruta)
   usuario = datos.detect { |user| user["codAlumno"] == codigo.to_i || user["codProfesor"] == codigo.to_i }
   if usuario
-    return usuario["nombre"]
+    return usuario["nombre"], usuario["clase"] # , usuario["tiempo"]
   else
     return nil
   end
@@ -128,37 +149,52 @@ end
 
 ==========================================================================================================================================
 =end
-rutaLocal = "./data_material/material.json"
-rutaExterna = "proyecto-lp/data_material/material.json"
-rutaLocalUsuarios = "./data_usuario/usuarios.json"
-verificarcionCodigo = false
-codigo = 0
 
-# Mientras el usuario no ingrese un código válido, se quedará en este bucle
-while !verificarcionCodigo
+def main
+  rutaLocal = "data_material/material.json"
+  rutaExterna = "proyecto-lp/data_material/material.json"
+  rutaLocalUsuarios = "data_usuario/usuarios.json"
+  verificacionCodigo = false
+  codigo = 0
+
+
+  # Mientras el usuario no ingrese un código válido, se quedará en este bucle
   puts "=======Ingrese código======="
+  print "-> "
   codigo = gets.chomp
-  verificarcionCodigo = existe_codigo(rutaLocalUsuarios, codigo)
+  verificacionCodigo = existe_codigo(rutaLocalUsuarios, codigo)
+  while !verificacionCodigo
+    puts "* Codigo no valido! Ingrese otra vez"
+    print "-> "
+    codigo = gets.chomp
+    verificacionCodigo = existe_codigo(rutaLocalUsuarios, codigo)
+  end
+
+  puts "======= Código válido ======="
+
+  # Cargar datos de libros cuyo stock sea != 0
+  diccionario = leer_json(rutaLocal)
+
+  # Obtener el libro para reservar
+  libroParaReservar = seleccionar_libro(diccionario)
+
+  #Obtener el nombre del usuario
+  l = nombre_usuario_por_codigo(rutaLocalUsuarios,codigo)
+  nombre = l[0]
+  maxLib = (l[1] == "Alumno") ? Alumno.maxLibro : Profesor.maxLibro
+  maxTime = (l[1] == "Alumno") ? Alumno.maxTiempo : Profesor.maxTiempo
+
+  #Obtener la cantidad de libros reservados por el usuario
+  cantidadLibrosReservados = contar_libros_reservados_por_ruta(rutaLocalUsuarios,nombre)
+  puts cantidadLibrosReservados
+
+  #Verificar si puede reservar más libros
+  if cantidadLibrosReservados >= maxLib then # && l[2] >= maxTime then
+    puts "no puedes"
+
+  else
+    puts "si puedes"
+    #Hace el préstamo
+    actualizar_libro(codigo, libroParaReservar)
+  end
 end
-
-puts "======= Código válido ======="
-
-
-# Cargar datos de libros cuyo stock sea != 0
-diccionario = leer_json(rutaLocal)
-
-# Obtener el libro para reservar
-libroParaReservar = seleccionar_libro(diccionario)
-
-#Obtener el nombre del usuario
-nombre = nombre_usuario_por_codigo(rutaLocalUsuarios,codigo)
-
-#Obtener la cantidad de libros reservados por el usuario
-cantidadLibrosReservados = contar_libros_reservados_por_ruta(rutaLocalUsuarios,nombre)
-puts cantidadLibrosReservados
-
-#Verificar si puede reservar más libros
-
-
-#Hace el préstamo
-actualizar

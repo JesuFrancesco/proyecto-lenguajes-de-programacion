@@ -1,5 +1,5 @@
 class Usuario
-  attr_accessor :apellidoPaterno, :apellidoMaterno, :nombre, :adeudaLib, :librosAdeudados, :tieneLibSeparado, :libReservados
+  attr_accessor :apellidoPaterno, :apellidoMaterno, :nombre, :adeudaLib, :librosAdeudados, :tieneLibSeparado, :libReservados, :tiempo
   attr_reader :maxLibro, :maxTiempo
 
   def initialize(apellidoPaterno, apellidoMaterno, nombre)

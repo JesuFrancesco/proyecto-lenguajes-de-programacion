@@ -11,6 +11,14 @@ class Alumno < Usuario
     super(apellidoPaterno, apellidoMaterno, nombre)
   end
 
+  def self.maxLibro
+    @@maxLibro
+  end
+
+  def self.maxTiempo
+    @@maxTiempo
+  end
+
   # Metodo expresión en JSON
   def exp_json()
     {
@@ -37,5 +45,6 @@ class Alumno < Usuario
     a.libReservados = diccionario["libReservados"]
     return a
   end
-
 end
+
+puts Alumno.maxLibro
