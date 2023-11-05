@@ -31,7 +31,8 @@ class Alumno < Usuario
       librosAdeudados: @librosAdeudados,
       # Reserva
       tieneLibSeparado: @tieneLibSeparado,
-      libReservados: @libReservados
+      libReservados: @libReservados,
+      tiempo: @tiempo
     }
   end
 
@@ -43,6 +44,7 @@ class Alumno < Usuario
     a.librosAdeudados = diccionario["librosAdeudados"]
     a.tieneLibSeparado = diccionario["tieneLibSeparado"]
     a.libReservados = diccionario["libReservados"]
+    a.tiempo = diccionario["tiempo"]
     return a
   end
 end

@@ -14,6 +14,7 @@ class Usuario
     @librosAdeudados = []
     @tieneLibSeparado = false
     @libReservados = []
+    @tiempo = 0
   end
 
 end

@@ -213,7 +213,6 @@ while true do
             when ACCION::PRESTAMO
                 require_relative 'prestamo.rb'
                 main
-                puts "hey" # TODO CONEXION CON 'prestamo.rb'
                 system "pause"
             else
                 puts 'pos no se'

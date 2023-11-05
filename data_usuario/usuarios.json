@@ -6,13 +6,14 @@
     "nombre": "Juana",
     "adeudaLib": false,
     "librosAdeudados": [
-      "Los miserables"
+
     ],
     "tieneLibSeparado": true,
     "libReservados": [
       "Luna de pluton"
     ],
-    "clase": "Alumno"
+    "clase": "Alumno",
+    "tiempo": 0
   },
   {
     "codAlumno": 20213956,
@@ -25,11 +26,10 @@
     ],
     "tieneLibSeparado": true,
     "libReservados": [
-      "El libro troll",
-      "El libro troll",
-      "Los miserables"
+      "El libro troll"
     ],
-    "clase": "Alumno"
+    "clase": "Alumno",
+    "tiempo": 0
   },
   {
     "codAlumno": 20223957,
@@ -38,13 +38,14 @@
     "nombre": "Luisa",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Alumno"
+    "clase": "Alumno",
+    "tiempo": 0
   },
   {
     "codAlumno": 20192458,
@@ -53,13 +54,14 @@
     "nombre": "Carlos",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Alumno"
+    "clase": "Alumno",
+    "tiempo": 0
   },
   {
     "codAlumno": 20213959,
@@ -68,13 +70,14 @@
     "nombre": "Ana",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Alumno"
+    "clase": "Alumno",
+    "tiempo": 0
   },
   {
     "codAlumno": 20223960,
@@ -83,13 +86,14 @@
     "nombre": "Mario",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Alumno"
+    "clase": "Alumno",
+    "tiempo": 0
   },
   {
     "codAlumno": 20192461,
@@ -98,13 +102,14 @@
     "nombre": "Isabel",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Alumno"
+    "clase": "Alumno",
+    "tiempo": 0
   },
   {
     "codAlumno": 20213962,
@@ -113,13 +118,14 @@
     "nombre": "Ricardo",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Alumno"
+    "clase": "Alumno",
+    "tiempo": 0
   },
   {
     "codAlumno": 20223963,
@@ -128,13 +134,14 @@
     "nombre": "Laura",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Alumno"
+    "clase": "Alumno",
+    "tiempo": 0
   },
   {
     "codAlumno": 20192464,
@@ -143,13 +150,14 @@
     "nombre": "Diego",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Alumno"
+    "clase": "Alumno",
+    "tiempo": 0
   },
   {
     "codAlumno": 20204678,
@@ -158,13 +166,14 @@
     "nombre": "Javier",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Alumno"
+    "clase": "Alumno",
+    "tiempo": 0
   },
   {
     "codAlumno": 20193215,
@@ -173,13 +182,14 @@
     "nombre": "Verónica",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Alumno"
+    "clase": "Alumno",
+    "tiempo": 0
   },
   {
     "codAlumno": 20212345,
@@ -188,13 +198,14 @@
     "nombre": "Luis",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Alumno"
+    "clase": "Alumno",
+    "tiempo": 0
   },
   {
     "codAlumno": 20185237,
@@ -203,13 +214,14 @@
     "nombre": "Mariana",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Alumno"
+    "clase": "Alumno",
+    "tiempo": 0
   },
   {
     "codAlumno": 20204567,
@@ -218,13 +230,14 @@
     "nombre": "Andrés",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Alumno"
+    "clase": "Alumno",
+    "tiempo": 0
   },
   {
     "codAlumno": 20198876,
@@ -233,13 +246,14 @@
     "nombre": "María",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Alumno"
+    "clase": "Alumno",
+    "tiempo": 0
   },
   {
     "codAlumno": 20209999,
@@ -248,13 +262,14 @@
     "nombre": "Carlos",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Alumno"
+    "clase": "Alumno",
+    "tiempo": 0
   },
   {
     "codAlumno": 20193377,
@@ -263,13 +278,14 @@
     "nombre": "Fernanda",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Alumno"
+    "clase": "Alumno",
+    "tiempo": 0
   },
   {
     "codAlumno": 20211222,
@@ -278,13 +294,14 @@
     "nombre": "Alejandro",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Alumno"
+    "clase": "Alumno",
+    "tiempo": 0
   },
   {
     "codAlumno": 20181111,
@@ -293,13 +310,14 @@
     "nombre": "Sofía",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Alumno"
+    "clase": "Alumno",
+    "tiempo": 0
   },
   {
     "codProfesor": 20214234,
@@ -308,13 +326,14 @@
     "nombre": "Ana",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Profesor"
+    "clase": "Profesor",
+    "tiempo": 0
   },
   {
     "codProfesor": 20215678,
@@ -323,13 +342,14 @@
     "nombre": "Pedro",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Profesor"
+    "clase": "Profesor",
+    "tiempo": 0
   },
   {
     "codProfesor": 20216789,
@@ -338,13 +358,14 @@
     "nombre": "Luisa",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Profesor"
+    "clase": "Profesor",
+    "tiempo": 0
   },
   {
     "codProfesor": 20217654,
@@ -353,13 +374,14 @@
     "nombre": "Carlos",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Profesor"
+    "clase": "Profesor",
+    "tiempo": 0
   },
   {
     "codProfesor": 20218345,
@@ -368,13 +390,14 @@
     "nombre": "Ana",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Profesor"
+    "clase": "Profesor",
+    "tiempo": 0
   },
   {
     "codProfesor": 20219999,
@@ -383,13 +406,14 @@
     "nombre": "Mario",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Profesor"
+    "clase": "Profesor",
+    "tiempo": 0
   },
   {
     "codProfesor": 20211111,
@@ -398,13 +422,14 @@
     "nombre": "Isabel",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Profesor"
+    "clase": "Profesor",
+    "tiempo": 0
   },
   {
     "codProfesor": 20212222,
@@ -413,13 +438,14 @@
     "nombre": "Ricardo",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Profesor"
+    "clase": "Profesor",
+    "tiempo": 0
   },
   {
     "codProfesor": 20213333,
@@ -428,15 +454,14 @@
     "nombre": "Laura",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      "",
-      "Los miserables",
-      "Los miserables"
+
     ],
-    "clase": "Profesor"
+    "clase": "Profesor",
+    "tiempo": 0
   },
   {
     "codProfesor": 20214444,
@@ -445,13 +470,14 @@
     "nombre": "Diego",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Profesor"
+    "clase": "Profesor",
+    "tiempo": 0
   },
   {
     "codProfesor": 20222058,
@@ -460,13 +486,14 @@
     "nombre": "Javier",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Profesor"
+    "clase": "Profesor",
+    "tiempo": 0
   },
   {
     "codProfesor": 20221735,
@@ -475,13 +502,14 @@
     "nombre": "Verónica",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Profesor"
+    "clase": "Profesor",
+    "tiempo": 0
   },
   {
     "codProfesor": 20222946,
@@ -490,13 +518,14 @@
     "nombre": "Luis",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Profesor"
+    "clase": "Profesor",
+    "tiempo": 0
   },
   {
     "codProfesor": 20222589,
@@ -505,13 +534,14 @@
     "nombre": "Mariana",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Profesor"
+    "clase": "Profesor",
+    "tiempo": 0
   },
   {
     "codProfesor": 20221876,
@@ -520,13 +550,14 @@
     "nombre": "Andrés",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Profesor"
+    "clase": "Profesor",
+    "tiempo": 0
   },
   {
     "codProfesor": 20223345,
@@ -535,13 +566,14 @@
     "nombre": "María",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Profesor"
+    "clase": "Profesor",
+    "tiempo": 0
   },
   {
     "codProfesor": 20223999,
@@ -550,13 +582,14 @@
     "nombre": "Carlos",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Profesor"
+    "clase": "Profesor",
+    "tiempo": 0
   },
   {
     "codProfesor": 20223377,
@@ -565,13 +598,14 @@
     "nombre": "Fernanda",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Profesor"
+    "clase": "Profesor",
+    "tiempo": 0
   },
   {
     "codProfesor": 20222222,
@@ -580,13 +614,14 @@
     "nombre": "Alejandro",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Profesor"
+    "clase": "Profesor",
+    "tiempo": 0
   },
   {
     "codProfesor": 20223333,
@@ -595,12 +630,13 @@
     "nombre": "Sofía",
     "adeudaLib": false,
     "librosAdeudados": [
-      ""
+
     ],
     "tieneLibSeparado": false,
     "libReservados": [
-      ""
+
     ],
-    "clase": "Profesor"
+    "clase": "Profesor",
+    "tiempo": 0
   }
 ]
