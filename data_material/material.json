@@ -41,7 +41,7 @@
     "autor": "Gabriel García Márquez",
     "paginas": 432,
     "yearPublicacion": 1967,
-    "stock": 5,
+    "stock": 3,
     "clase": "Libro"
   },
   {
@@ -59,7 +59,7 @@
     "autor": "J.K. Rowling",
     "paginas": 223,
     "yearPublicacion": 1997,
-    "stock": 4,
+    "stock": 10,
     "clase": "Libro"
   },
   {
@@ -68,7 +68,7 @@
     "autor": "Harper Lee",
     "paginas": 281,
     "yearPublicacion": 1960,
-    "stock": 8,
+    "stock": 7,
     "clase": "Libro"
   },
   {

@@ -153,6 +153,7 @@ while true do
                 opBusq = getOp(1,8)
                 if opBusq == 8 then next end # Para salir
                 system "cls"
+
                 # Ordenamiento en base a atributo
                 case opBusq
                 when BUSQ::AUTOR
@@ -211,8 +212,9 @@ while true do
 
             # Filtros con Haskell
             when ACCION::PRESTAMO
+                system "cls"
                 require_relative 'prestamo.rb'
-                main
+                hacer_prestamo()
                 system "pause"
             else
                 puts 'pos no se'
@@ -233,13 +235,13 @@ while true do
             case opUsu
             when 1
                 # Lectura de json a array de alumnos
-                clases = [CLASE::ALUMNO]
+                clases << [CLASE::ALUMNO]
             when 2
                 # Lectura de json a array de profesores
-                clases = [CLASE::PROFESOR]
+                clases << [CLASE::PROFESOR]
             when 3
                 # Lectura de json a array de usuarios
-                clases = [CLASE::ALUMNO, CLASE::PROFESOR]
+                clases << [CLASE::ALUMNO, CLASE::PROFESOR]
             end
 
             # Lectura de json a array de determinados usuarios

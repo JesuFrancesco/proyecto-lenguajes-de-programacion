@@ -26,10 +26,12 @@
     ],
     "tieneLibSeparado": true,
     "libReservados": [
-      "El libro troll"
+      "El libro troll",
+      "Cien años de soledad",
+      "Cien años de soledad"
     ],
     "clase": "Alumno",
-    "tiempo": 0
+    "tiempo": 15
   },
   {
     "codAlumno": 20223957,
