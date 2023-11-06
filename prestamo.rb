@@ -7,12 +7,14 @@ def seleccionar_libro(diccionario)
   encontrado = false
   while !encontrado # Mientras "encontrado" sea falso, repite el siguiente bloque de código
     puts "Ingresa el título del libro a buscar:"
+    print "-> "
     titulo = gets.chomp # Lee la entrada del usuario y la asigna a la variable "titulo"
     if diccionario[titulo]
       puts "Libro encontrado"
       return diccionario[titulo]["titulo"] # Retorna el nombre del libro
     else
-      puts "El libro no se encuentra en el repositorio!\n"
+      puts "El libro no se encuentra en el repositorio!"
+      puts " "
     end # Fin del bloque condicional
   end # Fin del ciclo while
 end # Fin de la definición de la función
@@ -54,6 +56,11 @@ def actualizar_libro(usuario_codigo, titulo_libro)
       # Agregar el título del libro a la lista de libros reservados del usuario
       usuario["librosAdeudados"] << titulo_libro
 
+      #Verificar si usuario tiene libros adeudados
+      if !usuario["librosAdeudados"].empty?
+        usuario["adeudaLib"] = true
+      end
+
       # Guardar los datos actualizados en los archivos JSON
       guardar_json("./data_usuario/usuarios.json", usuarios_data)
       guardar_json("./data_material/material.json", material_data)
@@ -64,17 +71,25 @@ def actualizar_libro(usuario_codigo, titulo_libro)
       puts "¿Desea que se le notifique cuando este disponible? (S/N)"
       print "-> "
       op = gets.chomp
-      while op != "S" || op != "N" do
+      while op != "S" && op != "N" do
         puts "Solo Si (S) o No (N)"
         print "-> "
         op = gets.chomp
       end
-      #
+
+      # Desea reservar un libro
       if op == "S" then
-        puts "hacer algo"
+        # Se agrega el libro
+        usuario["libReservados"] << titulo_libro
+        # Si la lista no esta vacia poner true
+        usuario["tieneLibSeparado"] = !usuario["libReservados"].empty?
+        # Guardar el JSON final
+        guardar_json("./data_usuario/usuarios.json", usuarios_data)
+        # Mensaje de confirmación
+        puts "Listo, " + titulo_libro + " se ha guardado en la lista de libros reservados del usuario " + usuario_codigo + "."
 
       else
-        puts "ok"
+        puts "Listo, " + titulo_libro + " no se ha guardado en la lista de libros"
       end
 
     end
@@ -102,18 +117,16 @@ def guardar_json(archivo, datos)
   end
 end
 
-# Lee el JSON en búsqueda de los libros con stock que no sean 0
-def obtenerLibrosDisponiblesJSON(archivo)
+# Lee el JSON en búsqueda de los libros
+def obtenerLibrosJSON(archivo)
   contenido = File.read(archivo)
   # Decodificar el contenido
   datos = JSON.parse(contenido)
   diccionario = {}
   # Iterar sobre los datos del archivo
   datos.each do |dato|
-    if dato["stock"] != 0
       # Guarda el título del libro y el libro
       diccionario[dato["titulo"]] = dato
-    end
   end
   # Devolvemos el diccionario
   return diccionario
@@ -144,6 +157,31 @@ def retornarDatosDelUsuario(ruta, codigo)
   end
 end
 
+def verificarReserva(codUsuario)
+  # Cargar datos de usuarios y material desde los archivos JSON
+  usuarios_data = leerJSON("./data_usuario/usuarios.json")
+  material_data = leerJSON("./data_material/material.json")
+
+  # Buscar al usuario por su código de alumno o Profesor
+  usuario = usuarios_data.detect { |user| user["codAlumno"] == codUsuario.to_i || user["codProfesor"] == codUsuario.to_i }
+
+  # Verificar disponibilidad
+  if usuario
+    librosReservados = usuario["libReservados"]
+
+    for lib in librosReservados do
+      libro = material_data.find { |x| x["titulo"] == lib }
+      if libro && libro["stock"] > 0 then
+        puts "\t¡Ahora tu libro " + libro["titulo"] + " está disponible!"
+        system "pause"
+      else
+        puts "\tEl libro " + libro["titulo"] + " todavía no está disponible."
+      end
+    end
+  end
+
+end
+
 =begin
 
 ==========================================================================================================================================
@@ -168,7 +206,8 @@ def hacer_prestamo
   end
   if codigo == "0" then return end
 
-  puts "======= Código válido =======\n"
+  puts "======= Código válido ======="
+  puts " "
 
   #Obtener el nombre, clase y atributo tiempo del usuario
   data = retornarDatosDelUsuario(rutaLocalUsuarios,codigo)
@@ -178,7 +217,7 @@ def hacer_prestamo
 
   #Obtener la cantidad de libros reservados por el usuario
   cantLibReservado = contarLibReservadoPorRuta(rutaLocalUsuarios,nombre)
-  puts "* Cantidad de libros: " + cantLibReservado.to_s
+  puts "* Cantidad de libros adeudados: " + cantLibReservado.to_s
 
   horasDeuda = data[2]
   puts "* Tiempo transcurrido desde préstamo: " + horasDeuda.to_s
@@ -186,21 +225,25 @@ def hacer_prestamo
   #Verificar si puede reservar más libros
   if cantLibReservado >= maxLib then
     puts "¡No puedes realizar el prestamo, has excedido el numero de libros adeudados!\n"
-    puts ""
+    puts " "
     return
   end
 
   if horasDeuda >= maxTime then
     puts "¡No puedes realizar el prestamo, has excedido el tiempo de retorno de libros!"
-    puts ""
+    puts " "
     return
   end
 
   # Caso positivo
-  puts "¡Habilitado para préstamo!\n"
+  puts "¡Habilitado para préstamo!"
+  puts " "
+
+  # Notificacion (si es que hay stock)
+  verificarReserva(codigo)
 
   # Cargar datos de libros cuyo stock sea != 0
-  diccionario = obtenerLibrosDisponiblesJSON(rutaLocal)
+  diccionario = obtenerLibrosJSON(rutaLocal)
 
   # Obtener el libro para reservar
   libroParaReservar = seleccionar_libro(diccionario)

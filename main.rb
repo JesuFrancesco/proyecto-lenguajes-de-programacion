@@ -20,15 +20,6 @@ def printObj(objeto)
     end
 end
 
-# def guardarJSON_Array(objeto, ruta)
-#     array = []
-#     for objeto in objeto
-#       array << objeto.exp_json()
-#     end
-#     x = JSON.generate(array)
-#     File.open("#{ruta}", "w") { | archivo | archivo.write(x) }
-# end
-
 def leerJSON_Array(ruta, clases)
     array = []
     cadena_json = File.read(ruta)

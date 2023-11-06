@@ -23,7 +23,7 @@
     "autor": "Rubius",
     "paginas": 2,
     "yearPublicacion": 2013,
-    "stock": 93,
+    "stock": 92,
     "clase": "Libro"
   },
   {
@@ -32,7 +32,7 @@
     "autor": "Suzanne Collins",
     "paginas": 374,
     "yearPublicacion": 2008,
-    "stock": 7,
+    "stock": 0,
     "clase": "Libro"
   },
   {
@@ -68,7 +68,7 @@
     "autor": "Harper Lee",
     "paginas": 281,
     "yearPublicacion": 1960,
-    "stock": 7,
+    "stock": 10,
     "clase": "Libro"
   },
   {
@@ -77,7 +77,7 @@
     "autor": "Fyodor Dostoevsky",
     "paginas": 551,
     "yearPublicacion": 1866,
-    "stock": 1,
+    "stock": 10,
     "clase": "Libro"
   },
   {

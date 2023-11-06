@@ -4,16 +4,16 @@
     "apellidoPaterno": "González",
     "apellidoMaterno": "López",
     "nombre": "Juana",
-    "adeudaLib": false,
+    "adeudaLib": true,
     "librosAdeudados": [
 
     ],
     "tieneLibSeparado": true,
     "libReservados": [
-      "Luna de pluton"
+
     ],
     "clase": "Alumno",
-    "tiempo": 0
+    "tiempo": 3
   },
   {
     "codAlumno": 20213956,
@@ -22,16 +22,14 @@
     "nombre": "Pedro",
     "adeudaLib": true,
     "librosAdeudados": [
-      "El libro troll"
+
     ],
-    "tieneLibSeparado": true,
+    "tieneLibSeparado": false,
     "libReservados": [
-      "El libro troll",
-      "Cien años de soledad",
-      "Cien años de soledad"
+
     ],
     "clase": "Alumno",
-    "tiempo": 15
+    "tiempo": 5
   },
   {
     "codAlumno": 20223957,
@@ -47,7 +45,7 @@
 
     ],
     "clase": "Alumno",
-    "tiempo": 0
+    "tiempo": 2
   },
   {
     "codAlumno": 20192458,
@@ -63,7 +61,7 @@
 
     ],
     "clase": "Alumno",
-    "tiempo": 0
+    "tiempo": 7
   },
   {
     "codAlumno": 20213959,
@@ -79,7 +77,7 @@
 
     ],
     "clase": "Alumno",
-    "tiempo": 0
+    "tiempo": 4
   },
   {
     "codAlumno": 20223960,
@@ -95,7 +93,7 @@
 
     ],
     "clase": "Alumno",
-    "tiempo": 0
+    "tiempo": 1
   },
   {
     "codAlumno": 20192461,
@@ -111,7 +109,7 @@
 
     ],
     "clase": "Alumno",
-    "tiempo": 0
+    "tiempo": 6
   },
   {
     "codAlumno": 20213962,
@@ -127,7 +125,7 @@
 
     ],
     "clase": "Alumno",
-    "tiempo": 0
+    "tiempo": 3
   },
   {
     "codAlumno": 20223963,
@@ -159,7 +157,7 @@
 
     ],
     "clase": "Alumno",
-    "tiempo": 0
+    "tiempo": 7
   },
   {
     "codAlumno": 20204678,
@@ -175,7 +173,7 @@
 
     ],
     "clase": "Alumno",
-    "tiempo": 0
+    "tiempo": 2
   },
   {
     "codAlumno": 20193215,
@@ -191,7 +189,7 @@
 
     ],
     "clase": "Alumno",
-    "tiempo": 0
+    "tiempo": 7
   },
   {
     "codAlumno": 20212345,
@@ -207,7 +205,7 @@
 
     ],
     "clase": "Alumno",
-    "tiempo": 0
+    "tiempo": 6
   },
   {
     "codAlumno": 20185237,
@@ -223,7 +221,7 @@
 
     ],
     "clase": "Alumno",
-    "tiempo": 0
+    "tiempo": 1
   },
   {
     "codAlumno": 20204567,
@@ -239,7 +237,7 @@
 
     ],
     "clase": "Alumno",
-    "tiempo": 0
+    "tiempo": 5
   },
   {
     "codAlumno": 20198876,
@@ -255,7 +253,7 @@
 
     ],
     "clase": "Alumno",
-    "tiempo": 0
+    "tiempo": 4
   },
   {
     "codAlumno": 20209999,
@@ -271,7 +269,7 @@
 
     ],
     "clase": "Alumno",
-    "tiempo": 0
+    "tiempo": 7
   },
   {
     "codAlumno": 20193377,
@@ -287,7 +285,7 @@
 
     ],
     "clase": "Alumno",
-    "tiempo": 0
+    "tiempo": 3
   },
   {
     "codAlumno": 20211222,
@@ -303,7 +301,7 @@
 
     ],
     "clase": "Alumno",
-    "tiempo": 0
+    "tiempo": 6
   },
   {
     "codAlumno": 20181111,
@@ -319,7 +317,7 @@
 
     ],
     "clase": "Alumno",
-    "tiempo": 0
+    "tiempo": 2
   },
   {
     "codProfesor": 20214234,
@@ -335,7 +333,7 @@
 
     ],
     "clase": "Profesor",
-    "tiempo": 0
+    "tiempo": 15
   },
   {
     "codProfesor": 20215678,
@@ -351,7 +349,7 @@
 
     ],
     "clase": "Profesor",
-    "tiempo": 0
+    "tiempo": 7
   },
   {
     "codProfesor": 20216789,
@@ -367,7 +365,7 @@
 
     ],
     "clase": "Profesor",
-    "tiempo": 0
+    "tiempo": 3
   },
   {
     "codProfesor": 20217654,
@@ -383,7 +381,7 @@
 
     ],
     "clase": "Profesor",
-    "tiempo": 0
+    "tiempo": 11
   },
   {
     "codProfesor": 20218345,
@@ -399,7 +397,7 @@
 
     ],
     "clase": "Profesor",
-    "tiempo": 0
+    "tiempo": 20
   },
   {
     "codProfesor": 20219999,
@@ -415,7 +413,7 @@
 
     ],
     "clase": "Profesor",
-    "tiempo": 0
+    "tiempo": 9
   },
   {
     "codProfesor": 20211111,
@@ -431,7 +429,7 @@
 
     ],
     "clase": "Profesor",
-    "tiempo": 0
+    "tiempo": 18
   },
   {
     "codProfesor": 20212222,
@@ -447,7 +445,7 @@
 
     ],
     "clase": "Profesor",
-    "tiempo": 0
+    "tiempo": 5
   },
   {
     "codProfesor": 20213333,
@@ -463,7 +461,7 @@
 
     ],
     "clase": "Profesor",
-    "tiempo": 0
+    "tiempo": 14
   },
   {
     "codProfesor": 20214444,
@@ -479,7 +477,7 @@
 
     ],
     "clase": "Profesor",
-    "tiempo": 0
+    "tiempo": 10
   },
   {
     "codProfesor": 20222058,
@@ -495,7 +493,7 @@
 
     ],
     "clase": "Profesor",
-    "tiempo": 0
+    "tiempo": 4
   },
   {
     "codProfesor": 20221735,
@@ -511,7 +509,7 @@
 
     ],
     "clase": "Profesor",
-    "tiempo": 0
+    "tiempo": 2
   },
   {
     "codProfesor": 20222946,
@@ -527,7 +525,7 @@
 
     ],
     "clase": "Profesor",
-    "tiempo": 0
+    "tiempo": 13
   },
   {
     "codProfesor": 20222589,
@@ -543,7 +541,7 @@
 
     ],
     "clase": "Profesor",
-    "tiempo": 0
+    "tiempo": 6
   },
   {
     "codProfesor": 20221876,
@@ -559,7 +557,7 @@
 
     ],
     "clase": "Profesor",
-    "tiempo": 0
+    "tiempo": 8
   },
   {
     "codProfesor": 20223345,
@@ -575,7 +573,7 @@
 
     ],
     "clase": "Profesor",
-    "tiempo": 0
+    "tiempo": 1
   },
   {
     "codProfesor": 20223999,
@@ -591,7 +589,7 @@
 
     ],
     "clase": "Profesor",
-    "tiempo": 0
+    "tiempo": 16
   },
   {
     "codProfesor": 20223377,
@@ -607,7 +605,7 @@
 
     ],
     "clase": "Profesor",
-    "tiempo": 0
+    "tiempo": 19
   },
   {
     "codProfesor": 20222222,
@@ -623,7 +621,7 @@
 
     ],
     "clase": "Profesor",
-    "tiempo": 0
+    "tiempo": 17
   },
   {
     "codProfesor": 20223333,
@@ -639,6 +637,6 @@
 
     ],
     "clase": "Profesor",
-    "tiempo": 0
+    "tiempo": 12
   }
 ]
