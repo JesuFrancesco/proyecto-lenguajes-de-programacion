@@ -87,13 +87,13 @@ end
 while true do
     system "cls"
     # Modelo USUARIO
-    system "color 0a"
+    system "color 60"
     puts "***************************************"
     puts "**********               **************"
     puts "*********  biblioteca ul  *************"
     puts "**********               **************"
     puts "***************************************"
-    system "color a"
+    system "color 06"
 
     # Opciones
     puts "1. Ver material"
@@ -102,13 +102,16 @@ while true do
     print "-> "
     opcion = gets.to_i
     system "cls"
+
     # Salir
     if opcion == 3 then
+        system "color 07"
         puts "Hasta pronto"
         break
 
     # Opciones 1 y 2 (Libros y Usuarios)
     else
+        system "color 0c"
         case opcion
         when 1
             # Lectura de json a array de materiales
@@ -126,11 +129,12 @@ while true do
             print "-> "
             opAccion = getOp(1,3)
             if opAccion == 3 then next end # Para salir
-            # system "cls"
+            system "cls"
 
             case opAccion
             # Búsqueda y filtros (C y Haskell)
             when ACCION::BUSQUEDAFILTRO
+                system "color 02"
                 puts "Ingrese método de búsqueda"
                 puts "1. Autor"
                 puts "2. Titulo"
@@ -173,6 +177,7 @@ while true do
                     cmd = `modulos_c\\cprog.exe #{5} "#{stock}"` #Devuelve todos los libros con stock diferente de 0
 
                 when BUSQ::FRESERVA
+                    system "color 09"
                     # Lectura de json a array de determinados usuarios
                     array = leerJSON_Array("data_usuario/usuarios.json", [CLASE::ALUMNO, CLASE::PROFESOR])
                     dicc = []
@@ -183,12 +188,13 @@ while true do
                     cmd = `modulos_hs\\hsReserva.exe #{dicc}`
 
                 when BUSQ::FDEUDORES
+                    system "color 09"
                     puts "Usuarios deudores (Haskell)"
                     # Lectura de json a array de determinados usuarios
                     array = leerJSON_Array("data_usuario/usuarios.json", [CLASE::ALUMNO, CLASE::PROFESOR])
                     dicc = []
                     for usuario in array do
-                        dicc << "(\"#{usuario.apellidoPaterno} #{usuario.apellidoPaterno} #{usuario.nombre}\", #{usuario.adeudaLib == true ? "True" : "False"})"
+                        dicc << "(\"#{usuario.apellidoPaterno} #{usuario.apellidoMaterno} #{usuario.nombre}\", #{usuario.adeudaLib == true ? "True" : "False"})"
                     end
                     cmd = `modulos_hs\\hsAdeuda.exe #{dicc}`
 
@@ -203,16 +209,18 @@ while true do
 
             # Filtros con Haskell
             when ACCION::PRESTAMO
+                system "color 01"
                 system "cls"
                 require_relative 'prestamo.rb'
                 hacer_prestamo()
                 system "pause"
             else
-                puts 'pos no se'
+                puts 'NULL'
             end
 
 
         when 2
+            system "color 0c"
             puts "Elija tipo de usuarios"
             puts "1. Alumnos"
             puts "2. Profesores"
@@ -226,13 +234,13 @@ while true do
             case opUsu
             when 1
                 # Lectura de json a array de alumnos
-                clases << [CLASE::ALUMNO]
+                clases = [CLASE::ALUMNO]
             when 2
                 # Lectura de json a array de profesores
-                clases << [CLASE::PROFESOR]
+                clases = [CLASE::PROFESOR]
             when 3
                 # Lectura de json a array de usuarios
-                clases << [CLASE::ALUMNO, CLASE::PROFESOR]
+                clases = [CLASE::ALUMNO, CLASE::PROFESOR]
             end
 
             # Lectura de json a array de determinados usuarios

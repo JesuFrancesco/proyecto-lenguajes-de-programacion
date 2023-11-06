@@ -32,7 +32,7 @@
     "autor": "Suzanne Collins",
     "paginas": 374,
     "yearPublicacion": 2008,
-    "stock": 0,
+    "stock": 9,
     "clase": "Libro"
   },
   {
@@ -331,7 +331,7 @@
     "area": "Investigación Médica",
     "autor": "Dr. Sarah Adams",
     "yearPublicacion": 2021,
-    "stock": 7,
+    "stock": 34253452,
     "clase": "Journal"
   },
   {
@@ -347,7 +347,7 @@
     "area": "Sostenibilidad Ambiental",
     "autor": "Dr. Emma Johnson",
     "yearPublicacion": 2018,
-    "stock": 9,
+    "stock": 122,
     "clase": "Journal"
   },
   {
@@ -355,7 +355,7 @@
     "area": "Matemáticas",
     "autor": "Dr. Richard White",
     "yearPublicacion": 2022,
-    "stock": 1,
+    "stock": 122,
     "clase": "Journal"
   },
   {

@@ -53,6 +53,16 @@ def actualizar_libro(usuario_codigo, titulo_libro)
       # Restar 1 al stock del libro
       libro["stock"] -= 1
 
+      # Verificar si el libro está en la lista de libros reservados del usuario
+      if usuario["libReservados"].include?(titulo_libro)
+        # Eliminar el libro de la lista de libros reservados
+        usuario["libReservados"].delete(titulo_libro)
+        # Establecer tieneLibSeparado como false si la lista está vacía
+        usuario["tieneLibSeparado"] = !usuario["libReservados"].empty?
+      else
+        puts "El libro no estaba reservado por el usuario."
+      end
+
       # Agregar el título del libro a la lista de libros reservados del usuario
       usuario["librosAdeudados"] << titulo_libro
 

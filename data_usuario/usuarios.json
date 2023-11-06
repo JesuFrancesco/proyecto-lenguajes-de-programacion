@@ -8,7 +8,7 @@
     "librosAdeudados": [
 
     ],
-    "tieneLibSeparado": true,
+    "tieneLibSeparado": false,
     "libReservados": [
 
     ],
@@ -20,7 +20,7 @@
     "apellidoPaterno": "Rodriguez",
     "apellidoMaterno": "Fernández",
     "nombre": "Pedro",
-    "adeudaLib": true,
+    "adeudaLib": false,
     "librosAdeudados": [
 
     ],
@@ -141,7 +141,7 @@
 
     ],
     "clase": "Alumno",
-    "tiempo": 0
+    "tiempo": 2
   },
   {
     "codAlumno": 20192464,
@@ -461,7 +461,7 @@
 
     ],
     "clase": "Profesor",
-    "tiempo": 14
+    "tiempo": 4
   },
   {
     "codProfesor": 20214444,

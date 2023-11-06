@@ -19,23 +19,6 @@ class Alumno < Usuario
     @@maxTiempo
   end
 
-  # Metodo expresión en JSON
-  def exp_json()
-    {
-      codAlumno: @codAlumno,
-      apellidoPaterno: @apellidoPaterno,
-      apellidoMaterno: @apellidoMaterno,
-      nombre: @nombre,
-      # Adeuda
-      adeudaLib: @adeudaLib,
-      librosAdeudados: @librosAdeudados,
-      # Reserva
-      tieneLibSeparado: @tieneLibSeparado,
-      libReservados: @libReservados,
-      tiempo: @tiempo
-    }
-  end
-
   # Método "parse" de JSON a clase Alumno
   # Self. marca que es static
   def self.leer_json(diccionario)
@@ -48,5 +31,3 @@ class Alumno < Usuario
     return a
   end
 end
-
-puts Alumno.maxLibro

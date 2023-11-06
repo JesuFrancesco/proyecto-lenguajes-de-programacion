@@ -18,22 +18,6 @@ class Profesor < Usuario
     @@maxTiempo
   end
 
-  def exp_json()
-    {
-      codProfesor: @codProfesor,
-      apellidoPaterno: @apellidoPaterno,
-      apellidoMaterno: @apellidoMaterno,
-      nombre: @nombre,
-      # Adeuda
-      adeudaLib: @adeudaLib,
-      librosAdeudados: @librosAdeudados,
-      # Reserva
-      tieneLibSeparado: @tieneLibSeparado,
-      libReservados: @libReservados,
-      tiempo: @tiempo
-    }
-  end
-
   def self.leer_json(diccionario)
     p =  Profesor.new(diccionario["codProfesor"], diccionario["apellidoPaterno"], diccionario["apellidoMaterno"], diccionario["nombre"])
     # ver si se puede usar herencia de metodo
