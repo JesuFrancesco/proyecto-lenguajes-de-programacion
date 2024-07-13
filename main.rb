@@ -40,7 +40,7 @@ def leerJSON_Array(ruta, clases)
         when CLASE::ACTA_CONGRESO
             array << ActaCongreso.leer_json(i)
         else
-            puts "wtf tu no existes"
+            puts "tu no existes !!!!!"
         end
     end
     return array
